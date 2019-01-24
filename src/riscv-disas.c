@@ -316,325 +316,325 @@ static const rv_comp_data rvcp_fsgnjx_q[] = {
 /* instruction metadata */
 
 const rv_opcode_data opcode_data[] = {
-    { "illegal", rv_codec_illegal, rv_fmt_none, NULL, 0, 0, 0 },
-    { "lui", rv_codec_u, rv_fmt_rd_imm, NULL, 0, 0, 0 },
-    { "auipc", rv_codec_u, rv_fmt_rd_offset, NULL, 0, 0, 0 },
-    { "jal", rv_codec_uj, rv_fmt_rd_offset, rvcp_jal, 0, 0, 0 },
-    { "jalr", rv_codec_i, rv_fmt_rd_rs1_offset, rvcp_jalr, 0, 0, 0 },
-    { "beq", rv_codec_sb, rv_fmt_rs1_rs2_offset, rvcp_beq, 0, 0, 0 },
-    { "bne", rv_codec_sb, rv_fmt_rs1_rs2_offset, rvcp_bne, 0, 0, 0 },
-    { "blt", rv_codec_sb, rv_fmt_rs1_rs2_offset, rvcp_blt, 0, 0, 0 },
-    { "bge", rv_codec_sb, rv_fmt_rs1_rs2_offset, rvcp_bge, 0, 0, 0 },
-    { "bltu", rv_codec_sb, rv_fmt_rs1_rs2_offset, rvcp_bltu, 0, 0, 0 },
-    { "bgeu", rv_codec_sb, rv_fmt_rs1_rs2_offset, rvcp_bgeu, 0, 0, 0 },
-    { "lb", rv_codec_i, rv_fmt_rd_offset_rs1, NULL, 0, 0, 0 },
-    { "lh", rv_codec_i, rv_fmt_rd_offset_rs1, NULL, 0, 0, 0 },
-    { "lw", rv_codec_i, rv_fmt_rd_offset_rs1, NULL, 0, 0, 0 },
-    { "lbu", rv_codec_i, rv_fmt_rd_offset_rs1, NULL, 0, 0, 0 },
-    { "lhu", rv_codec_i, rv_fmt_rd_offset_rs1, NULL, 0, 0, 0 },
-    { "sb", rv_codec_s, rv_fmt_rs2_offset_rs1, NULL, 0, 0, 0 },
-    { "sh", rv_codec_s, rv_fmt_rs2_offset_rs1, NULL, 0, 0, 0 },
-    { "sw", rv_codec_s, rv_fmt_rs2_offset_rs1, NULL, 0, 0, 0 },
-    { "addi", rv_codec_i, rv_fmt_rd_rs1_imm, rvcp_addi, 0, 0, 0 },
-    { "slti", rv_codec_i, rv_fmt_rd_rs1_imm, NULL, 0, 0, 0 },
-    { "sltiu", rv_codec_i, rv_fmt_rd_rs1_imm, rvcp_sltiu, 0, 0, 0 },
-    { "xori", rv_codec_i, rv_fmt_rd_rs1_imm, rvcp_xori, 0, 0, 0 },
-    { "ori", rv_codec_i, rv_fmt_rd_rs1_imm, NULL, 0, 0, 0 },
-    { "andi", rv_codec_i, rv_fmt_rd_rs1_imm, NULL, 0, 0, 0 },
-    { "slli", rv_codec_i_sh7, rv_fmt_rd_rs1_imm, NULL, 0, 0, 0 },
-    { "srli", rv_codec_i_sh7, rv_fmt_rd_rs1_imm, NULL, 0, 0, 0 },
-    { "srai", rv_codec_i_sh7, rv_fmt_rd_rs1_imm, NULL, 0, 0, 0 },
-    { "add", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0 },
-    { "sub", rv_codec_r, rv_fmt_rd_rs1_rs2, rvcp_sub, 0, 0, 0 },
-    { "sll", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0 },
-    { "slt", rv_codec_r, rv_fmt_rd_rs1_rs2, rvcp_slt, 0, 0, 0 },
-    { "sltu", rv_codec_r, rv_fmt_rd_rs1_rs2, rvcp_sltu, 0, 0, 0 },
-    { "xor", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0 },
-    { "srl", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0 },
-    { "sra", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0 },
-    { "or", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0 },
-    { "and", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0 },
-    { "fence", rv_codec_r_f, rv_fmt_pred_succ, NULL, 0, 0, 0 },
-    { "fence.i", rv_codec_none, rv_fmt_none, NULL, 0, 0, 0 },
-    { "lwu", rv_codec_i, rv_fmt_rd_offset_rs1, NULL, 0, 0, 0 },
-    { "ld", rv_codec_i, rv_fmt_rd_offset_rs1, NULL, 0, 0, 0 },
-    { "sd", rv_codec_s, rv_fmt_rs2_offset_rs1, NULL, 0, 0, 0 },
-    { "addiw", rv_codec_i, rv_fmt_rd_rs1_imm, rvcp_addiw, 0, 0, 0 },
-    { "slliw", rv_codec_i_sh5, rv_fmt_rd_rs1_imm, NULL, 0, 0, 0 },
-    { "srliw", rv_codec_i_sh5, rv_fmt_rd_rs1_imm, NULL, 0, 0, 0 },
-    { "sraiw", rv_codec_i_sh5, rv_fmt_rd_rs1_imm, NULL, 0, 0, 0 },
-    { "addw", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0 },
-    { "subw", rv_codec_r, rv_fmt_rd_rs1_rs2, rvcp_subw, 0, 0, 0 },
-    { "sllw", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0 },
-    { "srlw", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0 },
-    { "sraw", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0 },
-    { "ldu", rv_codec_i, rv_fmt_rd_offset_rs1, NULL, 0, 0, 0 },
-    { "lq", rv_codec_i, rv_fmt_rd_offset_rs1, NULL, 0, 0, 0 },
-    { "sq", rv_codec_s, rv_fmt_rs2_offset_rs1, NULL, 0, 0, 0 },
-    { "addid", rv_codec_i, rv_fmt_rd_rs1_imm, NULL, 0, 0, 0 },
-    { "sllid", rv_codec_i_sh6, rv_fmt_rd_rs1_imm, NULL, 0, 0, 0 },
-    { "srlid", rv_codec_i_sh6, rv_fmt_rd_rs1_imm, NULL, 0, 0, 0 },
-    { "sraid", rv_codec_i_sh6, rv_fmt_rd_rs1_imm, NULL, 0, 0, 0 },
-    { "addd", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0 },
-    { "subd", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0 },
-    { "slld", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0 },
-    { "srld", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0 },
-    { "srad", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0 },
-    { "mul", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0 },
-    { "mulh", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0 },
-    { "mulhsu", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0 },
-    { "mulhu", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0 },
-    { "div", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0 },
-    { "divu", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0 },
-    { "rem", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0 },
-    { "remu", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0 },
-    { "mulw", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0 },
-    { "divw", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0 },
-    { "divuw", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0 },
-    { "remw", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0 },
-    { "remuw", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0 },
-    { "muld", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0 },
-    { "divd", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0 },
-    { "divud", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0 },
-    { "remd", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0 },
-    { "remud", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0 },
-    { "lr.w", rv_codec_r_l, rv_fmt_aqrl_rd_rs1, NULL, 0, 0, 0 },
-    { "sc.w", rv_codec_r_a, rv_fmt_aqrl_rd_rs2_rs1, NULL, 0, 0, 0 },
-    { "amoswap.w", rv_codec_r_a, rv_fmt_aqrl_rd_rs2_rs1, NULL, 0, 0, 0 },
-    { "amoadd.w", rv_codec_r_a, rv_fmt_aqrl_rd_rs2_rs1, NULL, 0, 0, 0 },
-    { "amoxor.w", rv_codec_r_a, rv_fmt_aqrl_rd_rs2_rs1, NULL, 0, 0, 0 },
-    { "amoor.w", rv_codec_r_a, rv_fmt_aqrl_rd_rs2_rs1, NULL, 0, 0, 0 },
-    { "amoand.w", rv_codec_r_a, rv_fmt_aqrl_rd_rs2_rs1, NULL, 0, 0, 0 },
-    { "amomin.w", rv_codec_r_a, rv_fmt_aqrl_rd_rs2_rs1, NULL, 0, 0, 0 },
-    { "amomax.w", rv_codec_r_a, rv_fmt_aqrl_rd_rs2_rs1, NULL, 0, 0, 0 },
-    { "amominu.w", rv_codec_r_a, rv_fmt_aqrl_rd_rs2_rs1, NULL, 0, 0, 0 },
-    { "amomaxu.w", rv_codec_r_a, rv_fmt_aqrl_rd_rs2_rs1, NULL, 0, 0, 0 },
-    { "lr.d", rv_codec_r_l, rv_fmt_aqrl_rd_rs1, NULL, 0, 0, 0 },
-    { "sc.d", rv_codec_r_a, rv_fmt_aqrl_rd_rs2_rs1, NULL, 0, 0, 0 },
-    { "amoswap.d", rv_codec_r_a, rv_fmt_aqrl_rd_rs2_rs1, NULL, 0, 0, 0 },
-    { "amoadd.d", rv_codec_r_a, rv_fmt_aqrl_rd_rs2_rs1, NULL, 0, 0, 0 },
-    { "amoxor.d", rv_codec_r_a, rv_fmt_aqrl_rd_rs2_rs1, NULL, 0, 0, 0 },
-    { "amoor.d", rv_codec_r_a, rv_fmt_aqrl_rd_rs2_rs1, NULL, 0, 0, 0 },
-    { "amoand.d", rv_codec_r_a, rv_fmt_aqrl_rd_rs2_rs1, NULL, 0, 0, 0 },
-    { "amomin.d", rv_codec_r_a, rv_fmt_aqrl_rd_rs2_rs1, NULL, 0, 0, 0 },
-    { "amomax.d", rv_codec_r_a, rv_fmt_aqrl_rd_rs2_rs1, NULL, 0, 0, 0 },
-    { "amominu.d", rv_codec_r_a, rv_fmt_aqrl_rd_rs2_rs1, NULL, 0, 0, 0 },
-    { "amomaxu.d", rv_codec_r_a, rv_fmt_aqrl_rd_rs2_rs1, NULL, 0, 0, 0 },
-    { "lr.q", rv_codec_r_l, rv_fmt_aqrl_rd_rs1, NULL, 0, 0, 0 },
-    { "sc.q", rv_codec_r_a, rv_fmt_aqrl_rd_rs2_rs1, NULL, 0, 0, 0 },
-    { "amoswap.q", rv_codec_r_a, rv_fmt_aqrl_rd_rs2_rs1, NULL, 0, 0, 0 },
-    { "amoadd.q", rv_codec_r_a, rv_fmt_aqrl_rd_rs2_rs1, NULL, 0, 0, 0 },
-    { "amoxor.q", rv_codec_r_a, rv_fmt_aqrl_rd_rs2_rs1, NULL, 0, 0, 0 },
-    { "amoor.q", rv_codec_r_a, rv_fmt_aqrl_rd_rs2_rs1, NULL, 0, 0, 0 },
-    { "amoand.q", rv_codec_r_a, rv_fmt_aqrl_rd_rs2_rs1, NULL, 0, 0, 0 },
-    { "amomin.q", rv_codec_r_a, rv_fmt_aqrl_rd_rs2_rs1, NULL, 0, 0, 0 },
-    { "amomax.q", rv_codec_r_a, rv_fmt_aqrl_rd_rs2_rs1, NULL, 0, 0, 0 },
-    { "amominu.q", rv_codec_r_a, rv_fmt_aqrl_rd_rs2_rs1, NULL, 0, 0, 0 },
-    { "amomaxu.q", rv_codec_r_a, rv_fmt_aqrl_rd_rs2_rs1, NULL, 0, 0, 0 },
-    { "ecall", rv_codec_none, rv_fmt_none, NULL, 0, 0, 0 },
-    { "ebreak", rv_codec_none, rv_fmt_none, NULL, 0, 0, 0 },
-    { "uret", rv_codec_none, rv_fmt_none, NULL, 0, 0, 0 },
-    { "sret", rv_codec_none, rv_fmt_none, NULL, 0, 0, 0 },
-    { "hret", rv_codec_none, rv_fmt_none, NULL, 0, 0, 0 },
-    { "mret", rv_codec_none, rv_fmt_none, NULL, 0, 0, 0 },
-    { "dret", rv_codec_none, rv_fmt_none, NULL, 0, 0, 0 },
-    { "sfence.vm", rv_codec_r, rv_fmt_rs1, NULL, 0, 0, 0 },
-    { "sfence.vma", rv_codec_r, rv_fmt_rs1_rs2, NULL, 0, 0, 0 },
-    { "wfi", rv_codec_none, rv_fmt_none, NULL, 0, 0, 0 },
-    { "csrrw", rv_codec_i_csr, rv_fmt_rd_csr_rs1, rvcp_csrrw, 0, 0, 0 },
-    { "csrrs", rv_codec_i_csr, rv_fmt_rd_csr_rs1, rvcp_csrrs, 0, 0, 0 },
-    { "csrrc", rv_codec_i_csr, rv_fmt_rd_csr_rs1, NULL, 0, 0, 0 },
-    { "csrrwi", rv_codec_i_csr, rv_fmt_rd_csr_zimm, rvcp_csrrwi, 0, 0, 0 },
-    { "csrrsi", rv_codec_i_csr, rv_fmt_rd_csr_zimm, NULL, 0, 0, 0 },
-    { "csrrci", rv_codec_i_csr, rv_fmt_rd_csr_zimm, NULL, 0, 0, 0 },
-    { "flw", rv_codec_i, rv_fmt_frd_offset_rs1, NULL, 0, 0, 0 },
-    { "fsw", rv_codec_s, rv_fmt_frs2_offset_rs1, NULL, 0, 0, 0 },
-    { "fmadd.s", rv_codec_r4_m, rv_fmt_rm_frd_frs1_frs2_frs3, NULL, 0, 0, 0 },
-    { "fmsub.s", rv_codec_r4_m, rv_fmt_rm_frd_frs1_frs2_frs3, NULL, 0, 0, 0 },
-    { "fnmsub.s", rv_codec_r4_m, rv_fmt_rm_frd_frs1_frs2_frs3, NULL, 0, 0, 0 },
-    { "fnmadd.s", rv_codec_r4_m, rv_fmt_rm_frd_frs1_frs2_frs3, NULL, 0, 0, 0 },
-    { "fadd.s", rv_codec_r_m, rv_fmt_rm_frd_frs1_frs2, NULL, 0, 0, 0 },
-    { "fsub.s", rv_codec_r_m, rv_fmt_rm_frd_frs1_frs2, NULL, 0, 0, 0 },
-    { "fmul.s", rv_codec_r_m, rv_fmt_rm_frd_frs1_frs2, NULL, 0, 0, 0 },
-    { "fdiv.s", rv_codec_r_m, rv_fmt_rm_frd_frs1_frs2, NULL, 0, 0, 0 },
-    { "fsgnj.s", rv_codec_r, rv_fmt_frd_frs1_frs2, rvcp_fsgnj_s, 0, 0, 0 },
-    { "fsgnjn.s", rv_codec_r, rv_fmt_frd_frs1_frs2, rvcp_fsgnjn_s, 0, 0, 0 },
-    { "fsgnjx.s", rv_codec_r, rv_fmt_frd_frs1_frs2, rvcp_fsgnjx_s, 0, 0, 0 },
-    { "fmin.s", rv_codec_r, rv_fmt_frd_frs1_frs2, NULL, 0, 0, 0 },
-    { "fmax.s", rv_codec_r, rv_fmt_frd_frs1_frs2, NULL, 0, 0, 0 },
-    { "fsqrt.s", rv_codec_r_m, rv_fmt_rm_frd_frs1, NULL, 0, 0, 0 },
-    { "fle.s", rv_codec_r, rv_fmt_rd_frs1_frs2, NULL, 0, 0, 0 },
-    { "flt.s", rv_codec_r, rv_fmt_rd_frs1_frs2, NULL, 0, 0, 0 },
-    { "feq.s", rv_codec_r, rv_fmt_rd_frs1_frs2, NULL, 0, 0, 0 },
-    { "fcvt.w.s", rv_codec_r_m, rv_fmt_rm_rd_frs1, NULL, 0, 0, 0 },
-    { "fcvt.wu.s", rv_codec_r_m, rv_fmt_rm_rd_frs1, NULL, 0, 0, 0 },
-    { "fcvt.s.w", rv_codec_r_m, rv_fmt_rm_frd_rs1, NULL, 0, 0, 0 },
-    { "fcvt.s.wu", rv_codec_r_m, rv_fmt_rm_frd_rs1, NULL, 0, 0, 0 },
-    { "fmv.x.s", rv_codec_r, rv_fmt_rd_frs1, NULL, 0, 0, 0 },
-    { "fclass.s", rv_codec_r, rv_fmt_rd_frs1, NULL, 0, 0, 0 },
-    { "fmv.s.x", rv_codec_r, rv_fmt_frd_rs1, NULL, 0, 0, 0 },
-    { "fcvt.l.s", rv_codec_r_m, rv_fmt_rm_rd_frs1, NULL, 0, 0, 0 },
-    { "fcvt.lu.s", rv_codec_r_m, rv_fmt_rm_rd_frs1, NULL, 0, 0, 0 },
-    { "fcvt.s.l", rv_codec_r_m, rv_fmt_rm_frd_rs1, NULL, 0, 0, 0 },
-    { "fcvt.s.lu", rv_codec_r_m, rv_fmt_rm_frd_rs1, NULL, 0, 0, 0 },
-    { "fld", rv_codec_i, rv_fmt_frd_offset_rs1, NULL, 0, 0, 0 },
-    { "fsd", rv_codec_s, rv_fmt_frs2_offset_rs1, NULL, 0, 0, 0 },
-    { "fmadd.d", rv_codec_r4_m, rv_fmt_rm_frd_frs1_frs2_frs3, NULL, 0, 0, 0 },
-    { "fmsub.d", rv_codec_r4_m, rv_fmt_rm_frd_frs1_frs2_frs3, NULL, 0, 0, 0 },
-    { "fnmsub.d", rv_codec_r4_m, rv_fmt_rm_frd_frs1_frs2_frs3, NULL, 0, 0, 0 },
-    { "fnmadd.d", rv_codec_r4_m, rv_fmt_rm_frd_frs1_frs2_frs3, NULL, 0, 0, 0 },
-    { "fadd.d", rv_codec_r_m, rv_fmt_rm_frd_frs1_frs2, NULL, 0, 0, 0 },
-    { "fsub.d", rv_codec_r_m, rv_fmt_rm_frd_frs1_frs2, NULL, 0, 0, 0 },
-    { "fmul.d", rv_codec_r_m, rv_fmt_rm_frd_frs1_frs2, NULL, 0, 0, 0 },
-    { "fdiv.d", rv_codec_r_m, rv_fmt_rm_frd_frs1_frs2, NULL, 0, 0, 0 },
-    { "fsgnj.d", rv_codec_r, rv_fmt_frd_frs1_frs2, rvcp_fsgnj_d, 0, 0, 0 },
-    { "fsgnjn.d", rv_codec_r, rv_fmt_frd_frs1_frs2, rvcp_fsgnjn_d, 0, 0, 0 },
-    { "fsgnjx.d", rv_codec_r, rv_fmt_frd_frs1_frs2, rvcp_fsgnjx_d, 0, 0, 0 },
-    { "fmin.d", rv_codec_r, rv_fmt_frd_frs1_frs2, NULL, 0, 0, 0 },
-    { "fmax.d", rv_codec_r, rv_fmt_frd_frs1_frs2, NULL, 0, 0, 0 },
-    { "fcvt.s.d", rv_codec_r_m, rv_fmt_rm_frd_frs1, NULL, 0, 0, 0 },
-    { "fcvt.d.s", rv_codec_r_m, rv_fmt_rm_frd_frs1, NULL, 0, 0, 0 },
-    { "fsqrt.d", rv_codec_r_m, rv_fmt_rm_frd_frs1, NULL, 0, 0, 0 },
-    { "fle.d", rv_codec_r, rv_fmt_rd_frs1_frs2, NULL, 0, 0, 0 },
-    { "flt.d", rv_codec_r, rv_fmt_rd_frs1_frs2, NULL, 0, 0, 0 },
-    { "feq.d", rv_codec_r, rv_fmt_rd_frs1_frs2, NULL, 0, 0, 0 },
-    { "fcvt.w.d", rv_codec_r_m, rv_fmt_rm_rd_frs1, NULL, 0, 0, 0 },
-    { "fcvt.wu.d", rv_codec_r_m, rv_fmt_rm_rd_frs1, NULL, 0, 0, 0 },
-    { "fcvt.d.w", rv_codec_r_m, rv_fmt_rm_frd_rs1, NULL, 0, 0, 0 },
-    { "fcvt.d.wu", rv_codec_r_m, rv_fmt_rm_frd_rs1, NULL, 0, 0, 0 },
-    { "fclass.d", rv_codec_r, rv_fmt_rd_frs1, NULL, 0, 0, 0 },
-    { "fcvt.l.d", rv_codec_r_m, rv_fmt_rm_rd_frs1, NULL, 0, 0, 0 },
-    { "fcvt.lu.d", rv_codec_r_m, rv_fmt_rm_rd_frs1, NULL, 0, 0, 0 },
-    { "fmv.x.d", rv_codec_r, rv_fmt_rd_frs1, NULL, 0, 0, 0 },
-    { "fcvt.d.l", rv_codec_r_m, rv_fmt_rm_frd_rs1, NULL, 0, 0, 0 },
-    { "fcvt.d.lu", rv_codec_r_m, rv_fmt_rm_frd_rs1, NULL, 0, 0, 0 },
-    { "fmv.d.x", rv_codec_r, rv_fmt_frd_rs1, NULL, 0, 0, 0 },
-    { "flq", rv_codec_i, rv_fmt_frd_offset_rs1, NULL, 0, 0, 0 },
-    { "fsq", rv_codec_s, rv_fmt_frs2_offset_rs1, NULL, 0, 0, 0 },
-    { "fmadd.q", rv_codec_r4_m, rv_fmt_rm_frd_frs1_frs2_frs3, NULL, 0, 0, 0 },
-    { "fmsub.q", rv_codec_r4_m, rv_fmt_rm_frd_frs1_frs2_frs3, NULL, 0, 0, 0 },
-    { "fnmsub.q", rv_codec_r4_m, rv_fmt_rm_frd_frs1_frs2_frs3, NULL, 0, 0, 0 },
-    { "fnmadd.q", rv_codec_r4_m, rv_fmt_rm_frd_frs1_frs2_frs3, NULL, 0, 0, 0 },
-    { "fadd.q", rv_codec_r_m, rv_fmt_rm_frd_frs1_frs2, NULL, 0, 0, 0 },
-    { "fsub.q", rv_codec_r_m, rv_fmt_rm_frd_frs1_frs2, NULL, 0, 0, 0 },
-    { "fmul.q", rv_codec_r_m, rv_fmt_rm_frd_frs1_frs2, NULL, 0, 0, 0 },
-    { "fdiv.q", rv_codec_r_m, rv_fmt_rm_frd_frs1_frs2, NULL, 0, 0, 0 },
-    { "fsgnj.q", rv_codec_r, rv_fmt_frd_frs1_frs2, rvcp_fsgnj_q, 0, 0, 0 },
-    { "fsgnjn.q", rv_codec_r, rv_fmt_frd_frs1_frs2, rvcp_fsgnjn_q, 0, 0, 0 },
-    { "fsgnjx.q", rv_codec_r, rv_fmt_frd_frs1_frs2, rvcp_fsgnjx_q, 0, 0, 0 },
-    { "fmin.q", rv_codec_r, rv_fmt_frd_frs1_frs2, NULL, 0, 0, 0 },
-    { "fmax.q", rv_codec_r, rv_fmt_frd_frs1_frs2, NULL, 0, 0, 0 },
-    { "fcvt.s.q", rv_codec_r_m, rv_fmt_rm_frd_frs1, NULL, 0, 0, 0 },
-    { "fcvt.q.s", rv_codec_r_m, rv_fmt_rm_frd_frs1, NULL, 0, 0, 0 },
-    { "fcvt.d.q", rv_codec_r_m, rv_fmt_rm_frd_frs1, NULL, 0, 0, 0 },
-    { "fcvt.q.d", rv_codec_r_m, rv_fmt_rm_frd_frs1, NULL, 0, 0, 0 },
-    { "fsqrt.q", rv_codec_r_m, rv_fmt_rm_frd_frs1, NULL, 0, 0, 0 },
-    { "fle.q", rv_codec_r, rv_fmt_rd_frs1_frs2, NULL, 0, 0, 0 },
-    { "flt.q", rv_codec_r, rv_fmt_rd_frs1_frs2, NULL, 0, 0, 0 },
-    { "feq.q", rv_codec_r, rv_fmt_rd_frs1_frs2, NULL, 0, 0, 0 },
-    { "fcvt.w.q", rv_codec_r_m, rv_fmt_rm_rd_frs1, NULL, 0, 0, 0 },
-    { "fcvt.wu.q", rv_codec_r_m, rv_fmt_rm_rd_frs1, NULL, 0, 0, 0 },
-    { "fcvt.q.w", rv_codec_r_m, rv_fmt_rm_frd_rs1, NULL, 0, 0, 0 },
-    { "fcvt.q.wu", rv_codec_r_m, rv_fmt_rm_frd_rs1, NULL, 0, 0, 0 },
-    { "fclass.q", rv_codec_r, rv_fmt_rd_frs1, NULL, 0, 0, 0 },
-    { "fcvt.l.q", rv_codec_r_m, rv_fmt_rm_rd_frs1, NULL, 0, 0, 0 },
-    { "fcvt.lu.q", rv_codec_r_m, rv_fmt_rm_rd_frs1, NULL, 0, 0, 0 },
-    { "fcvt.q.l", rv_codec_r_m, rv_fmt_rm_frd_rs1, NULL, 0, 0, 0 },
-    { "fcvt.q.lu", rv_codec_r_m, rv_fmt_rm_frd_rs1, NULL, 0, 0, 0 },
-    { "fmv.x.q", rv_codec_r, rv_fmt_rd_frs1, NULL, 0, 0, 0 },
-    { "fmv.q.x", rv_codec_r, rv_fmt_frd_rs1, NULL, 0, 0, 0 },
+    { "illegal", rv_codec_illegal, rv_fmt_none, NULL, 0, 0, 0, 0 },
+    { "lui", rv_codec_u, rv_fmt_rd_imm, NULL, 0, 0, 0, 0 },
+    { "auipc", rv_codec_u, rv_fmt_rd_offset, NULL, 0, 0, 0, 0 },
+    { "jal", rv_codec_uj, rv_fmt_rd_offset, rvcp_jal, 0, 0, 0, 0 },
+    { "jalr", rv_codec_i, rv_fmt_rd_rs1_offset, rvcp_jalr, 0, 0, 0, 0 },
+    { "beq", rv_codec_sb, rv_fmt_rs1_rs2_offset, rvcp_beq, 0, 0, 0, 0 },
+    { "bne", rv_codec_sb, rv_fmt_rs1_rs2_offset, rvcp_bne, 0, 0, 0, 0 },
+    { "blt", rv_codec_sb, rv_fmt_rs1_rs2_offset, rvcp_blt, 0, 0, 0, 0 },
+    { "bge", rv_codec_sb, rv_fmt_rs1_rs2_offset, rvcp_bge, 0, 0, 0, 0 },
+    { "bltu", rv_codec_sb, rv_fmt_rs1_rs2_offset, rvcp_bltu, 0, 0, 0, 0 },
+    { "bgeu", rv_codec_sb, rv_fmt_rs1_rs2_offset, rvcp_bgeu, 0, 0, 0, 0 },
+    { "lb", rv_codec_i, rv_fmt_rd_offset_rs1, NULL, 0, 0, 0, 0 },
+    { "lh", rv_codec_i, rv_fmt_rd_offset_rs1, NULL, 0, 0, 0, 0 },
+    { "lw", rv_codec_i, rv_fmt_rd_offset_rs1, NULL, 0, 0, 0, 0 },
+    { "lbu", rv_codec_i, rv_fmt_rd_offset_rs1, NULL, 0, 0, 0, 0 },
+    { "lhu", rv_codec_i, rv_fmt_rd_offset_rs1, NULL, 0, 0, 0, 0 },
+    { "sb", rv_codec_s, rv_fmt_rs2_offset_rs1, NULL, 0, 0, 0, 0 },
+    { "sh", rv_codec_s, rv_fmt_rs2_offset_rs1, NULL, 0, 0, 0, 0 },
+    { "sw", rv_codec_s, rv_fmt_rs2_offset_rs1, NULL, 0, 0, 0, 0 },
+    { "addi", rv_codec_i, rv_fmt_rd_rs1_imm, rvcp_addi, 0, 0, 0, 0 },
+    { "slti", rv_codec_i, rv_fmt_rd_rs1_imm, NULL, 0, 0, 0, 0 },
+    { "sltiu", rv_codec_i, rv_fmt_rd_rs1_imm, rvcp_sltiu, 0, 0, 0, 0 },
+    { "xori", rv_codec_i, rv_fmt_rd_rs1_imm, rvcp_xori, 0, 0, 0, 0 },
+    { "ori", rv_codec_i, rv_fmt_rd_rs1_imm, NULL, 0, 0, 0, 0 },
+    { "andi", rv_codec_i, rv_fmt_rd_rs1_imm, NULL, 0, 0, 0, 0 },
+    { "slli", rv_codec_i_sh7, rv_fmt_rd_rs1_imm, NULL, 0, 0, 0, 0 },
+    { "srli", rv_codec_i_sh7, rv_fmt_rd_rs1_imm, NULL, 0, 0, 0, 0 },
+    { "srai", rv_codec_i_sh7, rv_fmt_rd_rs1_imm, NULL, 0, 0, 0, 0 },
+    { "add", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0, 0 },
+    { "sub", rv_codec_r, rv_fmt_rd_rs1_rs2, rvcp_sub, 0, 0, 0, 0 },
+    { "sll", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0, 0 },
+    { "slt", rv_codec_r, rv_fmt_rd_rs1_rs2, rvcp_slt, 0, 0, 0, 0 },
+    { "sltu", rv_codec_r, rv_fmt_rd_rs1_rs2, rvcp_sltu, 0, 0, 0, 0 },
+    { "xor", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0, 0 },
+    { "srl", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0, 0 },
+    { "sra", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0, 0 },
+    { "or", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0, 0 },
+    { "and", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0, 0 },
+    { "fence", rv_codec_r_f, rv_fmt_pred_succ, NULL, 0, 0, 0, 0 },
+    { "fence.i", rv_codec_none, rv_fmt_none, NULL, 0, 0, 0, 0 },
+    { "lwu", rv_codec_i, rv_fmt_rd_offset_rs1, NULL, 0, 0, 0, 0 },
+    { "ld", rv_codec_i, rv_fmt_rd_offset_rs1, NULL, 0, 0, 0, 0 },
+    { "sd", rv_codec_s, rv_fmt_rs2_offset_rs1, NULL, 0, 0, 0, 0 },
+    { "addiw", rv_codec_i, rv_fmt_rd_rs1_imm, rvcp_addiw, 0, 0, 0, 0 },
+    { "slliw", rv_codec_i_sh5, rv_fmt_rd_rs1_imm, NULL, 0, 0, 0, 0 },
+    { "srliw", rv_codec_i_sh5, rv_fmt_rd_rs1_imm, NULL, 0, 0, 0, 0 },
+    { "sraiw", rv_codec_i_sh5, rv_fmt_rd_rs1_imm, NULL, 0, 0, 0, 0 },
+    { "addw", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0, 0 },
+    { "subw", rv_codec_r, rv_fmt_rd_rs1_rs2, rvcp_subw, 0, 0, 0, 0 },
+    { "sllw", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0, 0 },
+    { "srlw", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0, 0 },
+    { "sraw", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0, 0 },
+    { "ldu", rv_codec_i, rv_fmt_rd_offset_rs1, NULL, 0, 0, 0, 0 },
+    { "lq", rv_codec_i, rv_fmt_rd_offset_rs1, NULL, 0, 0, 0, 0 },
+    { "sq", rv_codec_s, rv_fmt_rs2_offset_rs1, NULL, 0, 0, 0, 0 },
+    { "addid", rv_codec_i, rv_fmt_rd_rs1_imm, NULL, 0, 0, 0, 0 },
+    { "sllid", rv_codec_i_sh6, rv_fmt_rd_rs1_imm, NULL, 0, 0, 0, 0 },
+    { "srlid", rv_codec_i_sh6, rv_fmt_rd_rs1_imm, NULL, 0, 0, 0, 0 },
+    { "sraid", rv_codec_i_sh6, rv_fmt_rd_rs1_imm, NULL, 0, 0, 0, 0 },
+    { "addd", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0, 0 },
+    { "subd", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0, 0 },
+    { "slld", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0, 0 },
+    { "srld", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0, 0 },
+    { "srad", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0, 0 },
+    { "mul", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0, 0 },
+    { "mulh", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0, 0 },
+    { "mulhsu", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0, 0 },
+    { "mulhu", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0, 0 },
+    { "div", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0, 0 },
+    { "divu", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0, 0 },
+    { "rem", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0, 0 },
+    { "remu", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0, 0 },
+    { "mulw", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0, 0 },
+    { "divw", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0, 0 },
+    { "divuw", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0, 0 },
+    { "remw", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0, 0 },
+    { "remuw", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0, 0 },
+    { "muld", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0, 0 },
+    { "divd", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0, 0 },
+    { "divud", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0, 0 },
+    { "remd", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0, 0 },
+    { "remud", rv_codec_r, rv_fmt_rd_rs1_rs2, NULL, 0, 0, 0, 0 },
+    { "lr.w", rv_codec_r_l, rv_fmt_aqrl_rd_rs1, NULL, 0, 0, 0, 0 },
+    { "sc.w", rv_codec_r_a, rv_fmt_aqrl_rd_rs2_rs1, NULL, 0, 0, 0, 0 },
+    { "amoswap.w", rv_codec_r_a, rv_fmt_aqrl_rd_rs2_rs1, NULL, 0, 0, 0, 0 },
+    { "amoadd.w", rv_codec_r_a, rv_fmt_aqrl_rd_rs2_rs1, NULL, 0, 0, 0, 0 },
+    { "amoxor.w", rv_codec_r_a, rv_fmt_aqrl_rd_rs2_rs1, NULL, 0, 0, 0, 0 },
+    { "amoor.w", rv_codec_r_a, rv_fmt_aqrl_rd_rs2_rs1, NULL, 0, 0, 0, 0 },
+    { "amoand.w", rv_codec_r_a, rv_fmt_aqrl_rd_rs2_rs1, NULL, 0, 0, 0, 0 },
+    { "amomin.w", rv_codec_r_a, rv_fmt_aqrl_rd_rs2_rs1, NULL, 0, 0, 0, 0 },
+    { "amomax.w", rv_codec_r_a, rv_fmt_aqrl_rd_rs2_rs1, NULL, 0, 0, 0, 0 },
+    { "amominu.w", rv_codec_r_a, rv_fmt_aqrl_rd_rs2_rs1, NULL, 0, 0, 0, 0 },
+    { "amomaxu.w", rv_codec_r_a, rv_fmt_aqrl_rd_rs2_rs1, NULL, 0, 0, 0, 0 },
+    { "lr.d", rv_codec_r_l, rv_fmt_aqrl_rd_rs1, NULL, 0, 0, 0, 0 },
+    { "sc.d", rv_codec_r_a, rv_fmt_aqrl_rd_rs2_rs1, NULL, 0, 0, 0, 0 },
+    { "amoswap.d", rv_codec_r_a, rv_fmt_aqrl_rd_rs2_rs1, NULL, 0, 0, 0, 0 },
+    { "amoadd.d", rv_codec_r_a, rv_fmt_aqrl_rd_rs2_rs1, NULL, 0, 0, 0, 0 },
+    { "amoxor.d", rv_codec_r_a, rv_fmt_aqrl_rd_rs2_rs1, NULL, 0, 0, 0, 0 },
+    { "amoor.d", rv_codec_r_a, rv_fmt_aqrl_rd_rs2_rs1, NULL, 0, 0, 0, 0 },
+    { "amoand.d", rv_codec_r_a, rv_fmt_aqrl_rd_rs2_rs1, NULL, 0, 0, 0, 0 },
+    { "amomin.d", rv_codec_r_a, rv_fmt_aqrl_rd_rs2_rs1, NULL, 0, 0, 0, 0 },
+    { "amomax.d", rv_codec_r_a, rv_fmt_aqrl_rd_rs2_rs1, NULL, 0, 0, 0, 0 },
+    { "amominu.d", rv_codec_r_a, rv_fmt_aqrl_rd_rs2_rs1, NULL, 0, 0, 0, 0 },
+    { "amomaxu.d", rv_codec_r_a, rv_fmt_aqrl_rd_rs2_rs1, NULL, 0, 0, 0, 0 },
+    { "lr.q", rv_codec_r_l, rv_fmt_aqrl_rd_rs1, NULL, 0, 0, 0, 0 },
+    { "sc.q", rv_codec_r_a, rv_fmt_aqrl_rd_rs2_rs1, NULL, 0, 0, 0, 0 },
+    { "amoswap.q", rv_codec_r_a, rv_fmt_aqrl_rd_rs2_rs1, NULL, 0, 0, 0, 0 },
+    { "amoadd.q", rv_codec_r_a, rv_fmt_aqrl_rd_rs2_rs1, NULL, 0, 0, 0, 0 },
+    { "amoxor.q", rv_codec_r_a, rv_fmt_aqrl_rd_rs2_rs1, NULL, 0, 0, 0, 0 },
+    { "amoor.q", rv_codec_r_a, rv_fmt_aqrl_rd_rs2_rs1, NULL, 0, 0, 0, 0 },
+    { "amoand.q", rv_codec_r_a, rv_fmt_aqrl_rd_rs2_rs1, NULL, 0, 0, 0, 0 },
+    { "amomin.q", rv_codec_r_a, rv_fmt_aqrl_rd_rs2_rs1, NULL, 0, 0, 0, 0 },
+    { "amomax.q", rv_codec_r_a, rv_fmt_aqrl_rd_rs2_rs1, NULL, 0, 0, 0, 0 },
+    { "amominu.q", rv_codec_r_a, rv_fmt_aqrl_rd_rs2_rs1, NULL, 0, 0, 0, 0 },
+    { "amomaxu.q", rv_codec_r_a, rv_fmt_aqrl_rd_rs2_rs1, NULL, 0, 0, 0, 0 },
+    { "ecall", rv_codec_none, rv_fmt_none, NULL, 0, 0, 0, 0 },
+    { "ebreak", rv_codec_none, rv_fmt_none, NULL, 0, 0, 0, 0 },
+    { "uret", rv_codec_none, rv_fmt_none, NULL, 0, 0, 0, 0 },
+    { "sret", rv_codec_none, rv_fmt_none, NULL, 0, 0, 0, 0 },
+    { "hret", rv_codec_none, rv_fmt_none, NULL, 0, 0, 0, 0 },
+    { "mret", rv_codec_none, rv_fmt_none, NULL, 0, 0, 0, 0 },
+    { "dret", rv_codec_none, rv_fmt_none, NULL, 0, 0, 0, 0 },
+    { "sfence.vm", rv_codec_r, rv_fmt_rs1, NULL, 0, 0, 0, 0 },
+    { "sfence.vma", rv_codec_r, rv_fmt_rs1_rs2, NULL, 0, 0, 0, 0 },
+    { "wfi", rv_codec_none, rv_fmt_none, NULL, 0, 0, 0, 0 },
+    { "csrrw", rv_codec_i_csr, rv_fmt_rd_csr_rs1, rvcp_csrrw, 0, 0, 0, 0 },
+    { "csrrs", rv_codec_i_csr, rv_fmt_rd_csr_rs1, rvcp_csrrs, 0, 0, 0, 0 },
+    { "csrrc", rv_codec_i_csr, rv_fmt_rd_csr_rs1, NULL, 0, 0, 0, 0 },
+    { "csrrwi", rv_codec_i_csr, rv_fmt_rd_csr_zimm, rvcp_csrrwi, 0, 0, 0, 0 },
+    { "csrrsi", rv_codec_i_csr, rv_fmt_rd_csr_zimm, NULL, 0, 0, 0, 0 },
+    { "csrrci", rv_codec_i_csr, rv_fmt_rd_csr_zimm, NULL, 0, 0, 0, 0 },
+    { "flw", rv_codec_i, rv_fmt_frd_offset_rs1, NULL, 0, 0, 0, 0 },
+    { "fsw", rv_codec_s, rv_fmt_frs2_offset_rs1, NULL, 0, 0, 0, 0 },
+    { "fmadd.s", rv_codec_r4_m, rv_fmt_rm_frd_frs1_frs2_frs3, NULL, 0, 0, 0, 0 },
+    { "fmsub.s", rv_codec_r4_m, rv_fmt_rm_frd_frs1_frs2_frs3, NULL, 0, 0, 0, 0 },
+    { "fnmsub.s", rv_codec_r4_m, rv_fmt_rm_frd_frs1_frs2_frs3, NULL, 0, 0, 0, 0 },
+    { "fnmadd.s", rv_codec_r4_m, rv_fmt_rm_frd_frs1_frs2_frs3, NULL, 0, 0, 0, 0 },
+    { "fadd.s", rv_codec_r_m, rv_fmt_rm_frd_frs1_frs2, NULL, 0, 0, 0, 0 },
+    { "fsub.s", rv_codec_r_m, rv_fmt_rm_frd_frs1_frs2, NULL, 0, 0, 0, 0 },
+    { "fmul.s", rv_codec_r_m, rv_fmt_rm_frd_frs1_frs2, NULL, 0, 0, 0, 0 },
+    { "fdiv.s", rv_codec_r_m, rv_fmt_rm_frd_frs1_frs2, NULL, 0, 0, 0, 0 },
+    { "fsgnj.s", rv_codec_r, rv_fmt_frd_frs1_frs2, rvcp_fsgnj_s, 0, 0, 0, 0 },
+    { "fsgnjn.s", rv_codec_r, rv_fmt_frd_frs1_frs2, rvcp_fsgnjn_s, 0, 0, 0, 0 },
+    { "fsgnjx.s", rv_codec_r, rv_fmt_frd_frs1_frs2, rvcp_fsgnjx_s, 0, 0, 0, 0 },
+    { "fmin.s", rv_codec_r, rv_fmt_frd_frs1_frs2, NULL, 0, 0, 0, 0 },
+    { "fmax.s", rv_codec_r, rv_fmt_frd_frs1_frs2, NULL, 0, 0, 0, 0 },
+    { "fsqrt.s", rv_codec_r_m, rv_fmt_rm_frd_frs1, NULL, 0, 0, 0, 0 },
+    { "fle.s", rv_codec_r, rv_fmt_rd_frs1_frs2, NULL, 0, 0, 0, 0 },
+    { "flt.s", rv_codec_r, rv_fmt_rd_frs1_frs2, NULL, 0, 0, 0, 0 },
+    { "feq.s", rv_codec_r, rv_fmt_rd_frs1_frs2, NULL, 0, 0, 0, 0 },
+    { "fcvt.w.s", rv_codec_r_m, rv_fmt_rm_rd_frs1, NULL, 0, 0, 0, 0 },
+    { "fcvt.wu.s", rv_codec_r_m, rv_fmt_rm_rd_frs1, NULL, 0, 0, 0, 0 },
+    { "fcvt.s.w", rv_codec_r_m, rv_fmt_rm_frd_rs1, NULL, 0, 0, 0, 0 },
+    { "fcvt.s.wu", rv_codec_r_m, rv_fmt_rm_frd_rs1, NULL, 0, 0, 0, 0 },
+    { "fmv.x.s", rv_codec_r, rv_fmt_rd_frs1, NULL, 0, 0, 0, 0 },
+    { "fclass.s", rv_codec_r, rv_fmt_rd_frs1, NULL, 0, 0, 0, 0 },
+    { "fmv.s.x", rv_codec_r, rv_fmt_frd_rs1, NULL, 0, 0, 0, 0 },
+    { "fcvt.l.s", rv_codec_r_m, rv_fmt_rm_rd_frs1, NULL, 0, 0, 0, 0 },
+    { "fcvt.lu.s", rv_codec_r_m, rv_fmt_rm_rd_frs1, NULL, 0, 0, 0, 0 },
+    { "fcvt.s.l", rv_codec_r_m, rv_fmt_rm_frd_rs1, NULL, 0, 0, 0, 0 },
+    { "fcvt.s.lu", rv_codec_r_m, rv_fmt_rm_frd_rs1, NULL, 0, 0, 0, 0 },
+    { "fld", rv_codec_i, rv_fmt_frd_offset_rs1, NULL, 0, 0, 0, 0 },
+    { "fsd", rv_codec_s, rv_fmt_frs2_offset_rs1, NULL, 0, 0, 0, 0 },
+    { "fmadd.d", rv_codec_r4_m, rv_fmt_rm_frd_frs1_frs2_frs3, NULL, 0, 0, 0, 0 },
+    { "fmsub.d", rv_codec_r4_m, rv_fmt_rm_frd_frs1_frs2_frs3, NULL, 0, 0, 0, 0 },
+    { "fnmsub.d", rv_codec_r4_m, rv_fmt_rm_frd_frs1_frs2_frs3, NULL, 0, 0, 0, 0 },
+    { "fnmadd.d", rv_codec_r4_m, rv_fmt_rm_frd_frs1_frs2_frs3, NULL, 0, 0, 0, 0 },
+    { "fadd.d", rv_codec_r_m, rv_fmt_rm_frd_frs1_frs2, NULL, 0, 0, 0, 0 },
+    { "fsub.d", rv_codec_r_m, rv_fmt_rm_frd_frs1_frs2, NULL, 0, 0, 0, 0 },
+    { "fmul.d", rv_codec_r_m, rv_fmt_rm_frd_frs1_frs2, NULL, 0, 0, 0, 0 },
+    { "fdiv.d", rv_codec_r_m, rv_fmt_rm_frd_frs1_frs2, NULL, 0, 0, 0, 0 },
+    { "fsgnj.d", rv_codec_r, rv_fmt_frd_frs1_frs2, rvcp_fsgnj_d, 0, 0, 0, 0 },
+    { "fsgnjn.d", rv_codec_r, rv_fmt_frd_frs1_frs2, rvcp_fsgnjn_d, 0, 0, 0, 0 },
+    { "fsgnjx.d", rv_codec_r, rv_fmt_frd_frs1_frs2, rvcp_fsgnjx_d, 0, 0, 0, 0 },
+    { "fmin.d", rv_codec_r, rv_fmt_frd_frs1_frs2, NULL, 0, 0, 0, 0 },
+    { "fmax.d", rv_codec_r, rv_fmt_frd_frs1_frs2, NULL, 0, 0, 0, 0 },
+    { "fcvt.s.d", rv_codec_r_m, rv_fmt_rm_frd_frs1, NULL, 0, 0, 0, 0 },
+    { "fcvt.d.s", rv_codec_r_m, rv_fmt_rm_frd_frs1, NULL, 0, 0, 0, 0 },
+    { "fsqrt.d", rv_codec_r_m, rv_fmt_rm_frd_frs1, NULL, 0, 0, 0, 0 },
+    { "fle.d", rv_codec_r, rv_fmt_rd_frs1_frs2, NULL, 0, 0, 0, 0 },
+    { "flt.d", rv_codec_r, rv_fmt_rd_frs1_frs2, NULL, 0, 0, 0, 0 },
+    { "feq.d", rv_codec_r, rv_fmt_rd_frs1_frs2, NULL, 0, 0, 0, 0 },
+    { "fcvt.w.d", rv_codec_r_m, rv_fmt_rm_rd_frs1, NULL, 0, 0, 0, 0 },
+    { "fcvt.wu.d", rv_codec_r_m, rv_fmt_rm_rd_frs1, NULL, 0, 0, 0, 0 },
+    { "fcvt.d.w", rv_codec_r_m, rv_fmt_rm_frd_rs1, NULL, 0, 0, 0, 0 },
+    { "fcvt.d.wu", rv_codec_r_m, rv_fmt_rm_frd_rs1, NULL, 0, 0, 0, 0 },
+    { "fclass.d", rv_codec_r, rv_fmt_rd_frs1, NULL, 0, 0, 0, 0 },
+    { "fcvt.l.d", rv_codec_r_m, rv_fmt_rm_rd_frs1, NULL, 0, 0, 0, 0 },
+    { "fcvt.lu.d", rv_codec_r_m, rv_fmt_rm_rd_frs1, NULL, 0, 0, 0, 0 },
+    { "fmv.x.d", rv_codec_r, rv_fmt_rd_frs1, NULL, 0, 0, 0, 0 },
+    { "fcvt.d.l", rv_codec_r_m, rv_fmt_rm_frd_rs1, NULL, 0, 0, 0, 0 },
+    { "fcvt.d.lu", rv_codec_r_m, rv_fmt_rm_frd_rs1, NULL, 0, 0, 0, 0 },
+    { "fmv.d.x", rv_codec_r, rv_fmt_frd_rs1, NULL, 0, 0, 0, 0 },
+    { "flq", rv_codec_i, rv_fmt_frd_offset_rs1, NULL, 0, 0, 0, 0 },
+    { "fsq", rv_codec_s, rv_fmt_frs2_offset_rs1, NULL, 0, 0, 0, 0 },
+    { "fmadd.q", rv_codec_r4_m, rv_fmt_rm_frd_frs1_frs2_frs3, NULL, 0, 0, 0, 0 },
+    { "fmsub.q", rv_codec_r4_m, rv_fmt_rm_frd_frs1_frs2_frs3, NULL, 0, 0, 0, 0 },
+    { "fnmsub.q", rv_codec_r4_m, rv_fmt_rm_frd_frs1_frs2_frs3, NULL, 0, 0, 0, 0 },
+    { "fnmadd.q", rv_codec_r4_m, rv_fmt_rm_frd_frs1_frs2_frs3, NULL, 0, 0, 0, 0 },
+    { "fadd.q", rv_codec_r_m, rv_fmt_rm_frd_frs1_frs2, NULL, 0, 0, 0, 0 },
+    { "fsub.q", rv_codec_r_m, rv_fmt_rm_frd_frs1_frs2, NULL, 0, 0, 0, 0 },
+    { "fmul.q", rv_codec_r_m, rv_fmt_rm_frd_frs1_frs2, NULL, 0, 0, 0, 0 },
+    { "fdiv.q", rv_codec_r_m, rv_fmt_rm_frd_frs1_frs2, NULL, 0, 0, 0, 0 },
+    { "fsgnj.q", rv_codec_r, rv_fmt_frd_frs1_frs2, rvcp_fsgnj_q, 0, 0, 0, 0 },
+    { "fsgnjn.q", rv_codec_r, rv_fmt_frd_frs1_frs2, rvcp_fsgnjn_q, 0, 0, 0, 0 },
+    { "fsgnjx.q", rv_codec_r, rv_fmt_frd_frs1_frs2, rvcp_fsgnjx_q, 0, 0, 0, 0 },
+    { "fmin.q", rv_codec_r, rv_fmt_frd_frs1_frs2, NULL, 0, 0, 0, 0 },
+    { "fmax.q", rv_codec_r, rv_fmt_frd_frs1_frs2, NULL, 0, 0, 0, 0 },
+    { "fcvt.s.q", rv_codec_r_m, rv_fmt_rm_frd_frs1, NULL, 0, 0, 0, 0 },
+    { "fcvt.q.s", rv_codec_r_m, rv_fmt_rm_frd_frs1, NULL, 0, 0, 0, 0 },
+    { "fcvt.d.q", rv_codec_r_m, rv_fmt_rm_frd_frs1, NULL, 0, 0, 0, 0 },
+    { "fcvt.q.d", rv_codec_r_m, rv_fmt_rm_frd_frs1, NULL, 0, 0, 0, 0 },
+    { "fsqrt.q", rv_codec_r_m, rv_fmt_rm_frd_frs1, NULL, 0, 0, 0, 0 },
+    { "fle.q", rv_codec_r, rv_fmt_rd_frs1_frs2, NULL, 0, 0, 0, 0 },
+    { "flt.q", rv_codec_r, rv_fmt_rd_frs1_frs2, NULL, 0, 0, 0, 0 },
+    { "feq.q", rv_codec_r, rv_fmt_rd_frs1_frs2, NULL, 0, 0, 0, 0 },
+    { "fcvt.w.q", rv_codec_r_m, rv_fmt_rm_rd_frs1, NULL, 0, 0, 0, 0 },
+    { "fcvt.wu.q", rv_codec_r_m, rv_fmt_rm_rd_frs1, NULL, 0, 0, 0, 0 },
+    { "fcvt.q.w", rv_codec_r_m, rv_fmt_rm_frd_rs1, NULL, 0, 0, 0, 0 },
+    { "fcvt.q.wu", rv_codec_r_m, rv_fmt_rm_frd_rs1, NULL, 0, 0, 0, 0 },
+    { "fclass.q", rv_codec_r, rv_fmt_rd_frs1, NULL, 0, 0, 0, 0 },
+    { "fcvt.l.q", rv_codec_r_m, rv_fmt_rm_rd_frs1, NULL, 0, 0, 0, 0 },
+    { "fcvt.lu.q", rv_codec_r_m, rv_fmt_rm_rd_frs1, NULL, 0, 0, 0, 0 },
+    { "fcvt.q.l", rv_codec_r_m, rv_fmt_rm_frd_rs1, NULL, 0, 0, 0, 0 },
+    { "fcvt.q.lu", rv_codec_r_m, rv_fmt_rm_frd_rs1, NULL, 0, 0, 0, 0 },
+    { "fmv.x.q", rv_codec_r, rv_fmt_rd_frs1, NULL, 0, 0, 0, 0 },
+    { "fmv.q.x", rv_codec_r, rv_fmt_frd_rs1, NULL, 0, 0, 0, 0 },
     { "c.addi4spn", rv_codec_ciw_4spn, rv_fmt_rd_rs1_imm, NULL, rv_op_addi, rv_op_addi, rv_op_addi, rvcd_imm_nz },
-    { "c.fld", rv_codec_cl_ld, rv_fmt_frd_offset_rs1, NULL, rv_op_fld, rv_op_fld, 0 },
-    { "c.lw", rv_codec_cl_lw, rv_fmt_rd_offset_rs1, NULL, rv_op_lw, rv_op_lw, rv_op_lw },
-    { "c.flw", rv_codec_cl_lw, rv_fmt_frd_offset_rs1, NULL, rv_op_flw, 0, 0 },
-    { "c.fsd", rv_codec_cs_sd, rv_fmt_frs2_offset_rs1, NULL, rv_op_fsd, rv_op_fsd, 0 },
-    { "c.sw", rv_codec_cs_sw, rv_fmt_rs2_offset_rs1, NULL, rv_op_sw, rv_op_sw, rv_op_sw },
-    { "c.fsw", rv_codec_cs_sw, rv_fmt_frs2_offset_rs1, NULL, rv_op_fsw, 0, 0 },
-    { "c.nop", rv_codec_ci_none, rv_fmt_none, NULL, rv_op_addi, rv_op_addi, rv_op_addi },
+    { "c.fld", rv_codec_cl_ld, rv_fmt_frd_offset_rs1, NULL, rv_op_fld, rv_op_fld, 0, 0 },
+    { "c.lw", rv_codec_cl_lw, rv_fmt_rd_offset_rs1, NULL, rv_op_lw, rv_op_lw, rv_op_lw, 0 },
+    { "c.flw", rv_codec_cl_lw, rv_fmt_frd_offset_rs1, NULL, rv_op_flw, 0, 0, 0 },
+    { "c.fsd", rv_codec_cs_sd, rv_fmt_frs2_offset_rs1, NULL, rv_op_fsd, rv_op_fsd, 0, 0 },
+    { "c.sw", rv_codec_cs_sw, rv_fmt_rs2_offset_rs1, NULL, rv_op_sw, rv_op_sw, rv_op_sw, 0 },
+    { "c.fsw", rv_codec_cs_sw, rv_fmt_frs2_offset_rs1, NULL, rv_op_fsw, 0, 0, 0 },
+    { "c.nop", rv_codec_ci_none, rv_fmt_none, NULL, rv_op_addi, rv_op_addi, rv_op_addi, 0 },
     { "c.addi", rv_codec_ci, rv_fmt_rd_rs1_imm, NULL, rv_op_addi, rv_op_addi, rv_op_addi, rvcd_imm_nz_hint },
-    { "c.jal", rv_codec_cj_jal, rv_fmt_rd_offset, NULL, rv_op_jal, 0, 0 },
-    { "c.li", rv_codec_ci_li, rv_fmt_rd_rs1_imm, NULL, rv_op_addi, rv_op_addi, rv_op_addi },
+    { "c.jal", rv_codec_cj_jal, rv_fmt_rd_offset, NULL, rv_op_jal, 0, 0, 0 },
+    { "c.li", rv_codec_ci_li, rv_fmt_rd_rs1_imm, NULL, rv_op_addi, rv_op_addi, rv_op_addi, 0 },
     { "c.addi16sp", rv_codec_ci_16sp, rv_fmt_rd_rs1_imm, NULL, rv_op_addi, rv_op_addi, rv_op_addi, rvcd_imm_nz },
     { "c.lui", rv_codec_ci_lui, rv_fmt_rd_imm, NULL, rv_op_lui, rv_op_lui, rv_op_lui, rvcd_imm_nz },
     { "c.srli", rv_codec_cb_sh6, rv_fmt_rd_rs1_imm, NULL, rv_op_srli, rv_op_srli, rv_op_srli, rvcd_imm_nz },
     { "c.srai", rv_codec_cb_sh6, rv_fmt_rd_rs1_imm, NULL, rv_op_srai, rv_op_srai, rv_op_srai, rvcd_imm_nz },
     { "c.andi", rv_codec_cb_imm, rv_fmt_rd_rs1_imm, NULL, rv_op_andi, rv_op_andi, rv_op_andi, rvcd_imm_nz },
-    { "c.sub", rv_codec_cs, rv_fmt_rd_rs1_rs2, NULL, rv_op_sub, rv_op_sub, rv_op_sub },
-    { "c.xor", rv_codec_cs, rv_fmt_rd_rs1_rs2, NULL, rv_op_xor, rv_op_xor, rv_op_xor },
-    { "c.or", rv_codec_cs, rv_fmt_rd_rs1_rs2, NULL, rv_op_or, rv_op_or, rv_op_or },
-    { "c.and", rv_codec_cs, rv_fmt_rd_rs1_rs2, NULL, rv_op_and, rv_op_and, rv_op_and },
-    { "c.subw", rv_codec_cs, rv_fmt_rd_rs1_rs2, NULL, rv_op_subw, rv_op_subw, rv_op_subw },
-    { "c.addw", rv_codec_cs, rv_fmt_rd_rs1_rs2, NULL, rv_op_addw, rv_op_addw, rv_op_addw },
-    { "c.j", rv_codec_cj, rv_fmt_rd_offset, NULL, rv_op_jal, rv_op_jal, rv_op_jal },
-    { "c.beqz", rv_codec_cb, rv_fmt_rs1_rs2_offset, NULL, rv_op_beq, rv_op_beq, rv_op_beq },
-    { "c.bnez", rv_codec_cb, rv_fmt_rs1_rs2_offset, NULL, rv_op_bne, rv_op_bne, rv_op_bne },
+    { "c.sub", rv_codec_cs, rv_fmt_rd_rs1_rs2, NULL, rv_op_sub, rv_op_sub, rv_op_sub, 0 },
+    { "c.xor", rv_codec_cs, rv_fmt_rd_rs1_rs2, NULL, rv_op_xor, rv_op_xor, rv_op_xor, 0 },
+    { "c.or", rv_codec_cs, rv_fmt_rd_rs1_rs2, NULL, rv_op_or, rv_op_or, rv_op_or, 0 },
+    { "c.and", rv_codec_cs, rv_fmt_rd_rs1_rs2, NULL, rv_op_and, rv_op_and, rv_op_and, 0 },
+    { "c.subw", rv_codec_cs, rv_fmt_rd_rs1_rs2, NULL, rv_op_subw, rv_op_subw, rv_op_subw, 0 },
+    { "c.addw", rv_codec_cs, rv_fmt_rd_rs1_rs2, NULL, rv_op_addw, rv_op_addw, rv_op_addw, 0 },
+    { "c.j", rv_codec_cj, rv_fmt_rd_offset, NULL, rv_op_jal, rv_op_jal, rv_op_jal, 0 },
+    { "c.beqz", rv_codec_cb, rv_fmt_rs1_rs2_offset, NULL, rv_op_beq, rv_op_beq, rv_op_beq, 0 },
+    { "c.bnez", rv_codec_cb, rv_fmt_rs1_rs2_offset, NULL, rv_op_bne, rv_op_bne, rv_op_bne, 0 },
     { "c.slli", rv_codec_ci_sh6, rv_fmt_rd_rs1_imm, NULL, rv_op_slli, rv_op_slli, rv_op_slli, rvcd_imm_nz },
-    { "c.fldsp", rv_codec_ci_ldsp, rv_fmt_frd_offset_rs1, NULL, rv_op_fld, rv_op_fld, rv_op_fld },
-    { "c.lwsp", rv_codec_ci_lwsp, rv_fmt_rd_offset_rs1, NULL, rv_op_lw, rv_op_lw, rv_op_lw },
-    { "c.flwsp", rv_codec_ci_lwsp, rv_fmt_frd_offset_rs1, NULL, rv_op_flw, 0, 0 },
-    { "c.jr", rv_codec_cr_jr, rv_fmt_rd_rs1_offset, NULL, rv_op_jalr, rv_op_jalr, rv_op_jalr },
-    { "c.mv", rv_codec_cr_mv, rv_fmt_rd_rs1_rs2, NULL, rv_op_addi, rv_op_addi, rv_op_addi },
-    { "c.ebreak", rv_codec_ci_none, rv_fmt_none, NULL, rv_op_ebreak, rv_op_ebreak, rv_op_ebreak },
-    { "c.jalr", rv_codec_cr_jalr, rv_fmt_rd_rs1_offset, NULL, rv_op_jalr, rv_op_jalr, rv_op_jalr },
-    { "c.add", rv_codec_cr, rv_fmt_rd_rs1_rs2, NULL, rv_op_add, rv_op_add, rv_op_add },
-    { "c.fsdsp", rv_codec_css_sdsp, rv_fmt_frs2_offset_rs1, NULL, rv_op_fsd, rv_op_fsd, rv_op_fsd },
-    { "c.swsp", rv_codec_css_swsp, rv_fmt_rs2_offset_rs1, NULL, rv_op_sw, rv_op_sw, rv_op_sw },
-    { "c.fswsp", rv_codec_css_swsp, rv_fmt_frs2_offset_rs1, NULL, rv_op_fsw, 0, 0 },
-    { "c.ld", rv_codec_cl_ld, rv_fmt_rd_offset_rs1, NULL, 0, rv_op_ld, rv_op_ld },
-    { "c.sd", rv_codec_cs_sd, rv_fmt_rs2_offset_rs1, NULL, 0, rv_op_sd, rv_op_sd },
-    { "c.addiw", rv_codec_ci, rv_fmt_rd_rs1_imm, NULL, 0, rv_op_addiw, rv_op_addiw },
-    { "c.ldsp", rv_codec_ci_ldsp, rv_fmt_rd_offset_rs1, NULL, 0, rv_op_ld, rv_op_ld },
-    { "c.sdsp", rv_codec_css_sdsp, rv_fmt_rs2_offset_rs1, NULL, 0, rv_op_sd, rv_op_sd },
-    { "c.lq", rv_codec_cl_lq, rv_fmt_rd_offset_rs1, NULL, 0, 0, rv_op_lq },
-    { "c.sq", rv_codec_cs_sq, rv_fmt_rs2_offset_rs1, NULL, 0, 0, rv_op_sq },
-    { "c.lqsp", rv_codec_ci_lqsp, rv_fmt_rd_offset_rs1, NULL, 0, 0, rv_op_lq },
-    { "c.sqsp", rv_codec_css_sqsp, rv_fmt_rs2_offset_rs1, NULL, 0, 0, rv_op_sq },
-    { "nop", rv_codec_i, rv_fmt_none, NULL, 0, 0, 0 },
-    { "mv", rv_codec_i, rv_fmt_rd_rs1, NULL, 0, 0, 0 },
-    { "not", rv_codec_i, rv_fmt_rd_rs1, NULL, 0, 0, 0 },
-    { "neg", rv_codec_r, rv_fmt_rd_rs2, NULL, 0, 0, 0 },
-    { "negw", rv_codec_r, rv_fmt_rd_rs2, NULL, 0, 0, 0 },
-    { "sext.w", rv_codec_i, rv_fmt_rd_rs1, NULL, 0, 0, 0 },
-    { "seqz", rv_codec_i, rv_fmt_rd_rs1, NULL, 0, 0, 0 },
-    { "snez", rv_codec_r, rv_fmt_rd_rs2, NULL, 0, 0, 0 },
-    { "sltz", rv_codec_r, rv_fmt_rd_rs1, NULL, 0, 0, 0 },
-    { "sgtz", rv_codec_r, rv_fmt_rd_rs2, NULL, 0, 0, 0 },
-    { "fmv.s", rv_codec_r, rv_fmt_rd_rs1, NULL, 0, 0, 0 },
-    { "fabs.s", rv_codec_r, rv_fmt_rd_rs1, NULL, 0, 0, 0 },
-    { "fneg.s", rv_codec_r, rv_fmt_rd_rs1, NULL, 0, 0, 0 },
-    { "fmv.d", rv_codec_r, rv_fmt_rd_rs1, NULL, 0, 0, 0 },
-    { "fabs.d", rv_codec_r, rv_fmt_rd_rs1, NULL, 0, 0, 0 },
-    { "fneg.d", rv_codec_r, rv_fmt_rd_rs1, NULL, 0, 0, 0 },
-    { "fmv.q", rv_codec_r, rv_fmt_rd_rs1, NULL, 0, 0, 0 },
-    { "fabs.q", rv_codec_r, rv_fmt_rd_rs1, NULL, 0, 0, 0 },
-    { "fneg.q", rv_codec_r, rv_fmt_rd_rs1, NULL, 0, 0, 0 },
-    { "beqz", rv_codec_sb, rv_fmt_rs1_offset, NULL, 0, 0, 0 },
-    { "bnez", rv_codec_sb, rv_fmt_rs1_offset, NULL, 0, 0, 0 },
-    { "blez", rv_codec_sb, rv_fmt_rs2_offset, NULL, 0, 0, 0 },
-    { "bgez", rv_codec_sb, rv_fmt_rs1_offset, NULL, 0, 0, 0 },
-    { "bltz", rv_codec_sb, rv_fmt_rs1_offset, NULL, 0, 0, 0 },
-    { "bgtz", rv_codec_sb, rv_fmt_rs2_offset, NULL, 0, 0, 0 },
-    { "ble", rv_codec_sb, rv_fmt_rs2_rs1_offset, NULL, 0, 0, 0 },
-    { "bleu", rv_codec_sb, rv_fmt_rs2_rs1_offset, NULL, 0, 0, 0 },
-    { "bgt", rv_codec_sb, rv_fmt_rs2_rs1_offset, NULL, 0, 0, 0 },
-    { "bgtu", rv_codec_sb, rv_fmt_rs2_rs1_offset, NULL, 0, 0, 0 },
-    { "j", rv_codec_uj, rv_fmt_offset, NULL, 0, 0, 0 },
-    { "ret", rv_codec_i, rv_fmt_none, NULL, 0, 0, 0 },
-    { "jr", rv_codec_i, rv_fmt_rs1, NULL, 0, 0, 0 },
-    { "rdcycle", rv_codec_i_csr, rv_fmt_rd, NULL, 0, 0, 0 },
-    { "rdtime", rv_codec_i_csr, rv_fmt_rd, NULL, 0, 0, 0 },
-    { "rdinstret", rv_codec_i_csr, rv_fmt_rd, NULL, 0, 0, 0 },
-    { "rdcycleh", rv_codec_i_csr, rv_fmt_rd, NULL, 0, 0, 0 },
-    { "rdtimeh", rv_codec_i_csr, rv_fmt_rd, NULL, 0, 0, 0 },
-    { "rdinstreth", rv_codec_i_csr, rv_fmt_rd, NULL, 0, 0, 0 },
-    { "frcsr", rv_codec_i_csr, rv_fmt_rd, NULL, 0, 0, 0 },
-    { "frrm", rv_codec_i_csr, rv_fmt_rd, NULL, 0, 0, 0 },
-    { "frflags", rv_codec_i_csr, rv_fmt_rd, NULL, 0, 0, 0 },
-    { "fscsr", rv_codec_i_csr, rv_fmt_rd_rs1, NULL, 0, 0, 0 },
-    { "fsrm", rv_codec_i_csr, rv_fmt_rd_rs1, NULL, 0, 0, 0 },
-    { "fsflags", rv_codec_i_csr, rv_fmt_rd_rs1, NULL, 0, 0, 0 },
-    { "fsrmi", rv_codec_i_csr, rv_fmt_rd_zimm, NULL, 0, 0, 0 },
-    { "fsflagsi", rv_codec_i_csr, rv_fmt_rd_zimm, NULL, 0, 0, 0 },
+    { "c.fldsp", rv_codec_ci_ldsp, rv_fmt_frd_offset_rs1, NULL, rv_op_fld, rv_op_fld, rv_op_fld, 0 },
+    { "c.lwsp", rv_codec_ci_lwsp, rv_fmt_rd_offset_rs1, NULL, rv_op_lw, rv_op_lw, rv_op_lw, 0 },
+    { "c.flwsp", rv_codec_ci_lwsp, rv_fmt_frd_offset_rs1, NULL, rv_op_flw, 0, 0, 0 },
+    { "c.jr", rv_codec_cr_jr, rv_fmt_rd_rs1_offset, NULL, rv_op_jalr, rv_op_jalr, rv_op_jalr, 0 },
+    { "c.mv", rv_codec_cr_mv, rv_fmt_rd_rs1_rs2, NULL, rv_op_addi, rv_op_addi, rv_op_addi, 0 },
+    { "c.ebreak", rv_codec_ci_none, rv_fmt_none, NULL, rv_op_ebreak, rv_op_ebreak, rv_op_ebreak, 0 },
+    { "c.jalr", rv_codec_cr_jalr, rv_fmt_rd_rs1_offset, NULL, rv_op_jalr, rv_op_jalr, rv_op_jalr, 0 },
+    { "c.add", rv_codec_cr, rv_fmt_rd_rs1_rs2, NULL, rv_op_add, rv_op_add, rv_op_add, 0 },
+    { "c.fsdsp", rv_codec_css_sdsp, rv_fmt_frs2_offset_rs1, NULL, rv_op_fsd, rv_op_fsd, rv_op_fsd, 0 },
+    { "c.swsp", rv_codec_css_swsp, rv_fmt_rs2_offset_rs1, NULL, rv_op_sw, rv_op_sw, rv_op_sw, 0 },
+    { "c.fswsp", rv_codec_css_swsp, rv_fmt_frs2_offset_rs1, NULL, rv_op_fsw, 0, 0, 0 },
+    { "c.ld", rv_codec_cl_ld, rv_fmt_rd_offset_rs1, NULL, 0, rv_op_ld, rv_op_ld, 0 },
+    { "c.sd", rv_codec_cs_sd, rv_fmt_rs2_offset_rs1, NULL, 0, rv_op_sd, rv_op_sd, 0 },
+    { "c.addiw", rv_codec_ci, rv_fmt_rd_rs1_imm, NULL, 0, rv_op_addiw, rv_op_addiw, 0 },
+    { "c.ldsp", rv_codec_ci_ldsp, rv_fmt_rd_offset_rs1, NULL, 0, rv_op_ld, rv_op_ld, 0 },
+    { "c.sdsp", rv_codec_css_sdsp, rv_fmt_rs2_offset_rs1, NULL, 0, rv_op_sd, rv_op_sd, 0 },
+    { "c.lq", rv_codec_cl_lq, rv_fmt_rd_offset_rs1, NULL, 0, 0, rv_op_lq, 0 },
+    { "c.sq", rv_codec_cs_sq, rv_fmt_rs2_offset_rs1, NULL, 0, 0, rv_op_sq, 0 },
+    { "c.lqsp", rv_codec_ci_lqsp, rv_fmt_rd_offset_rs1, NULL, 0, 0, rv_op_lq, 0 },
+    { "c.sqsp", rv_codec_css_sqsp, rv_fmt_rs2_offset_rs1, NULL, 0, 0, rv_op_sq, 0 },
+    { "nop", rv_codec_i, rv_fmt_none, NULL, 0, 0, 0, 0 },
+    { "mv", rv_codec_i, rv_fmt_rd_rs1, NULL, 0, 0, 0, 0 },
+    { "not", rv_codec_i, rv_fmt_rd_rs1, NULL, 0, 0, 0, 0 },
+    { "neg", rv_codec_r, rv_fmt_rd_rs2, NULL, 0, 0, 0, 0 },
+    { "negw", rv_codec_r, rv_fmt_rd_rs2, NULL, 0, 0, 0, 0 },
+    { "sext.w", rv_codec_i, rv_fmt_rd_rs1, NULL, 0, 0, 0, 0 },
+    { "seqz", rv_codec_i, rv_fmt_rd_rs1, NULL, 0, 0, 0, 0 },
+    { "snez", rv_codec_r, rv_fmt_rd_rs2, NULL, 0, 0, 0, 0 },
+    { "sltz", rv_codec_r, rv_fmt_rd_rs1, NULL, 0, 0, 0, 0 },
+    { "sgtz", rv_codec_r, rv_fmt_rd_rs2, NULL, 0, 0, 0, 0 },
+    { "fmv.s", rv_codec_r, rv_fmt_rd_rs1, NULL, 0, 0, 0, 0 },
+    { "fabs.s", rv_codec_r, rv_fmt_rd_rs1, NULL, 0, 0, 0, 0 },
+    { "fneg.s", rv_codec_r, rv_fmt_rd_rs1, NULL, 0, 0, 0, 0 },
+    { "fmv.d", rv_codec_r, rv_fmt_rd_rs1, NULL, 0, 0, 0, 0 },
+    { "fabs.d", rv_codec_r, rv_fmt_rd_rs1, NULL, 0, 0, 0, 0 },
+    { "fneg.d", rv_codec_r, rv_fmt_rd_rs1, NULL, 0, 0, 0, 0 },
+    { "fmv.q", rv_codec_r, rv_fmt_rd_rs1, NULL, 0, 0, 0, 0 },
+    { "fabs.q", rv_codec_r, rv_fmt_rd_rs1, NULL, 0, 0, 0, 0 },
+    { "fneg.q", rv_codec_r, rv_fmt_rd_rs1, NULL, 0, 0, 0, 0 },
+    { "beqz", rv_codec_sb, rv_fmt_rs1_offset, NULL, 0, 0, 0, 0 },
+    { "bnez", rv_codec_sb, rv_fmt_rs1_offset, NULL, 0, 0, 0, 0 },
+    { "blez", rv_codec_sb, rv_fmt_rs2_offset, NULL, 0, 0, 0, 0 },
+    { "bgez", rv_codec_sb, rv_fmt_rs1_offset, NULL, 0, 0, 0, 0 },
+    { "bltz", rv_codec_sb, rv_fmt_rs1_offset, NULL, 0, 0, 0, 0 },
+    { "bgtz", rv_codec_sb, rv_fmt_rs2_offset, NULL, 0, 0, 0, 0 },
+    { "ble", rv_codec_sb, rv_fmt_rs2_rs1_offset, NULL, 0, 0, 0, 0 },
+    { "bleu", rv_codec_sb, rv_fmt_rs2_rs1_offset, NULL, 0, 0, 0, 0 },
+    { "bgt", rv_codec_sb, rv_fmt_rs2_rs1_offset, NULL, 0, 0, 0, 0 },
+    { "bgtu", rv_codec_sb, rv_fmt_rs2_rs1_offset, NULL, 0, 0, 0, 0 },
+    { "j", rv_codec_uj, rv_fmt_offset, NULL, 0, 0, 0, 0 },
+    { "ret", rv_codec_i, rv_fmt_none, NULL, 0, 0, 0, 0 },
+    { "jr", rv_codec_i, rv_fmt_rs1, NULL, 0, 0, 0, 0 },
+    { "rdcycle", rv_codec_i_csr, rv_fmt_rd, NULL, 0, 0, 0, 0 },
+    { "rdtime", rv_codec_i_csr, rv_fmt_rd, NULL, 0, 0, 0, 0 },
+    { "rdinstret", rv_codec_i_csr, rv_fmt_rd, NULL, 0, 0, 0, 0 },
+    { "rdcycleh", rv_codec_i_csr, rv_fmt_rd, NULL, 0, 0, 0, 0 },
+    { "rdtimeh", rv_codec_i_csr, rv_fmt_rd, NULL, 0, 0, 0, 0 },
+    { "rdinstreth", rv_codec_i_csr, rv_fmt_rd, NULL, 0, 0, 0, 0 },
+    { "frcsr", rv_codec_i_csr, rv_fmt_rd, NULL, 0, 0, 0, 0 },
+    { "frrm", rv_codec_i_csr, rv_fmt_rd, NULL, 0, 0, 0, 0 },
+    { "frflags", rv_codec_i_csr, rv_fmt_rd, NULL, 0, 0, 0, 0 },
+    { "fscsr", rv_codec_i_csr, rv_fmt_rd_rs1, NULL, 0, 0, 0, 0 },
+    { "fsrm", rv_codec_i_csr, rv_fmt_rd_rs1, NULL, 0, 0, 0, 0 },
+    { "fsflags", rv_codec_i_csr, rv_fmt_rd_rs1, NULL, 0, 0, 0, 0 },
+    { "fsrmi", rv_codec_i_csr, rv_fmt_rd_zimm, NULL, 0, 0, 0, 0 },
+    { "fsflagsi", rv_codec_i_csr, rv_fmt_rd_zimm, NULL, 0, 0, 0, 0 },
 };
 
 /* CSR names */
@@ -853,9 +853,9 @@ static void decode_inst_opcode(rv_decode *dec, rv_isa isa)
 {
     rv_inst inst = dec->inst;
     rv_opcode op = rv_op_illegal;
-    switch (((inst >> 0) & 0b11)) {
+    switch (((inst >> 0) & 3/*0b11*/)) {
     case 0:
-        switch (((inst >> 13) & 0b111)) {
+        switch (((inst >> 13) & 7/*0b111*/)) {
         case 0: op = rv_op_c_addi4spn; break;
         case 1:
             if (isa == rv128) {
@@ -890,9 +890,9 @@ static void decode_inst_opcode(rv_decode *dec, rv_isa isa)
         }
         break;
     case 1:
-        switch (((inst >> 13) & 0b111)) {
+        switch (((inst >> 13) & 7/*0b111*/)) {
         case 0:
-            switch (((inst >> 2) & 0b11111111111)) {
+            switch (((inst >> 2) & 2047/*0b11111111111*/)) {
             case 0: op = rv_op_c_nop; break;
             default: op = rv_op_c_addi; break;
             }
@@ -906,13 +906,13 @@ static void decode_inst_opcode(rv_decode *dec, rv_isa isa)
             break;
         case 2: op = rv_op_c_li; break;
         case 3:
-            switch (((inst >> 7) & 0b11111)) {
+            switch (((inst >> 7) & 31/*0b11111*/)) {
             case 2: op = rv_op_c_addi16sp; break;
             default: op = rv_op_c_lui; break;
             }
             break;
         case 4:
-            switch (((inst >> 10) & 0b11)) {
+            switch (((inst >> 10) & 3/*0b11*/)) {
             case 0:
                 op = rv_op_c_srli;
                 break;
@@ -921,7 +921,7 @@ static void decode_inst_opcode(rv_decode *dec, rv_isa isa)
                 break;
             case 2: op = rv_op_c_andi; break;
             case 3:
-                switch (((inst >> 10) & 0b100) | ((inst >> 5) & 0b011)) {
+                switch (((inst >> 10) & 4/*0b100*/) | ((inst >> 5) & 3/*0b011*/)) {
                 case 0: op = rv_op_c_sub; break;
                 case 1: op = rv_op_c_xor; break;
                 case 2: op = rv_op_c_or; break;
@@ -938,7 +938,7 @@ static void decode_inst_opcode(rv_decode *dec, rv_isa isa)
         }
         break;
     case 2:
-        switch (((inst >> 13) & 0b111)) {
+        switch (((inst >> 13) & 7/*0b111*/)) {
         case 0:
             op = rv_op_c_slli;
             break;
@@ -958,17 +958,17 @@ static void decode_inst_opcode(rv_decode *dec, rv_isa isa)
             }
             break;
         case 4:
-            switch (((inst >> 12) & 0b1)) {
+            switch (((inst >> 12) & 1/*0b1*/)) {
             case 0:
-                switch (((inst >> 2) & 0b11111)) {
+                switch (((inst >> 2) & 31/*0b11111*/)) {
                 case 0: op = rv_op_c_jr; break;
                 default: op = rv_op_c_mv; break;
                 }
                 break;
             case 1:
-                switch (((inst >> 2) & 0b11111)) {
+                switch (((inst >> 2) & 31/*0b11111*/)) {
                 case 0:
-                    switch (((inst >> 7) & 0b11111)) {
+                    switch (((inst >> 7) & 31/*0b11111*/)) {
                     case 0: op = rv_op_c_ebreak; break;
                     default: op = rv_op_c_jalr; break;
                     }
@@ -996,9 +996,9 @@ static void decode_inst_opcode(rv_decode *dec, rv_isa isa)
         }
         break;
     case 3:
-        switch (((inst >> 2) & 0b11111)) {
+        switch (((inst >> 2) & 31/*0b11111*/)) {
         case 0:
-            switch (((inst >> 12) & 0b111)) {
+            switch (((inst >> 12) & 7/*0b111*/)) {
             case 0: op = rv_op_lb; break;
             case 1: op = rv_op_lh; break;
             case 2: op = rv_op_lw; break;
@@ -1010,24 +1010,24 @@ static void decode_inst_opcode(rv_decode *dec, rv_isa isa)
             }
             break;
         case 1:
-            switch (((inst >> 12) & 0b111)) {
+            switch (((inst >> 12) & 7/*0b111*/)) {
             case 2: op = rv_op_flw; break;
             case 3: op = rv_op_fld; break;
             case 4: op = rv_op_flq; break;
             }
             break;
         case 3:
-            switch (((inst >> 12) & 0b111)) {
+            switch (((inst >> 12) & 7/*0b111*/)) {
             case 0: op = rv_op_fence; break;
             case 1: op = rv_op_fence_i; break;
             case 2: op = rv_op_lq; break;
             }
             break;
         case 4:
-            switch (((inst >> 12) & 0b111)) {
+            switch (((inst >> 12) & 7/*0b111*/)) {
             case 0: op = rv_op_addi; break;
             case 1:
-                switch (((inst >> 27) & 0b11111)) {
+                switch (((inst >> 27) & 31/*0b11111*/)) {
                 case 0: op = rv_op_slli; break;
                 }
                 break;
@@ -1035,7 +1035,7 @@ static void decode_inst_opcode(rv_decode *dec, rv_isa isa)
             case 3: op = rv_op_sltiu; break;
             case 4: op = rv_op_xori; break;
             case 5:
-                switch (((inst >> 27) & 0b11111)) {
+                switch (((inst >> 27) & 31/*0b11111*/)) {
                 case 0: op = rv_op_srli; break;
                 case 8: op = rv_op_srai; break;
                 }
@@ -1046,15 +1046,15 @@ static void decode_inst_opcode(rv_decode *dec, rv_isa isa)
             break;
         case 5: op = rv_op_auipc; break;
         case 6:
-            switch (((inst >> 12) & 0b111)) {
+            switch (((inst >> 12) & 7/*0b111*/)) {
             case 0: op = rv_op_addiw; break;
             case 1:
-                switch (((inst >> 25) & 0b1111111)) {
+                switch (((inst >> 25) & 127/*0b1111111*/)) {
                 case 0: op = rv_op_slliw; break;
                 }
                 break;
             case 5:
-                switch (((inst >> 25) & 0b1111111)) {
+                switch (((inst >> 25) & 127/*0b1111111*/)) {
                 case 0: op = rv_op_srliw; break;
                 case 32: op = rv_op_sraiw; break;
                 }
@@ -1062,7 +1062,7 @@ static void decode_inst_opcode(rv_decode *dec, rv_isa isa)
             }
             break;
         case 8:
-            switch (((inst >> 12) & 0b111)) {
+            switch (((inst >> 12) & 7/*0b111*/)) {
             case 0: op = rv_op_sb; break;
             case 1: op = rv_op_sh; break;
             case 2: op = rv_op_sw; break;
@@ -1071,14 +1071,14 @@ static void decode_inst_opcode(rv_decode *dec, rv_isa isa)
             }
             break;
         case 9:
-            switch (((inst >> 12) & 0b111)) {
+            switch (((inst >> 12) & 7/*0b111*/)) {
             case 2: op = rv_op_fsw; break;
             case 3: op = rv_op_fsd; break;
             case 4: op = rv_op_fsq; break;
             }
             break;
         case 11:
-            switch (((inst >> 24) & 0b11111000) | ((inst >> 12) & 0b00000111)) {
+            switch (((inst >> 24) & 248/*0b11111000*/) | ((inst >> 12) & 7/*0b00000111*/)) {
             case 2: op = rv_op_amoadd_w; break;
             case 3: op = rv_op_amoadd_d; break;
             case 4: op = rv_op_amoadd_q; break;
@@ -1086,17 +1086,17 @@ static void decode_inst_opcode(rv_decode *dec, rv_isa isa)
             case 11: op = rv_op_amoswap_d; break;
             case 12: op = rv_op_amoswap_q; break;
             case 18:
-                switch (((inst >> 20) & 0b11111)) {
+                switch (((inst >> 20) & 31/*0b11111*/)) {
                 case 0: op = rv_op_lr_w; break;
                 }
                 break;
             case 19:
-                switch (((inst >> 20) & 0b11111)) {
+                switch (((inst >> 20) & 31/*0b11111*/)) {
                 case 0: op = rv_op_lr_d; break;
                 }
                 break;
             case 20:
-                switch (((inst >> 20) & 0b11111)) {
+                switch (((inst >> 20) & 31/*0b11111*/)) {
                 case 0: op = rv_op_lr_q; break;
                 }
                 break;
@@ -1127,7 +1127,7 @@ static void decode_inst_opcode(rv_decode *dec, rv_isa isa)
             }
             break;
         case 12:
-            switch (((inst >> 22) & 0b1111111000) | ((inst >> 12) & 0b0000000111)) {
+            switch (((inst >> 22) & 1016/*0b1111111000*/) | ((inst >> 12) & 7/*0b0000000111*/)) {
             case 0: op = rv_op_add; break;
             case 1: op = rv_op_sll; break;
             case 2: op = rv_op_slt; break;
@@ -1150,7 +1150,7 @@ static void decode_inst_opcode(rv_decode *dec, rv_isa isa)
             break;
         case 13: op = rv_op_lui; break;
         case 14:
-            switch (((inst >> 22) & 0b1111111000) | ((inst >> 12) & 0b0000000111)) {
+            switch (((inst >> 22) & 1016/*0b1111111000*/) | ((inst >> 12) & 7/*0b0000000111*/)) {
             case 0: op = rv_op_addw; break;
             case 1: op = rv_op_sllw; break;
             case 5: op = rv_op_srlw; break;
@@ -1164,35 +1164,35 @@ static void decode_inst_opcode(rv_decode *dec, rv_isa isa)
             }
             break;
         case 16:
-            switch (((inst >> 25) & 0b11)) {
+            switch (((inst >> 25) & 3/*0b11*/)) {
             case 0: op = rv_op_fmadd_s; break;
             case 1: op = rv_op_fmadd_d; break;
             case 3: op = rv_op_fmadd_q; break;
             }
             break;
         case 17:
-            switch (((inst >> 25) & 0b11)) {
+            switch (((inst >> 25) & 3/*0b11*/)) {
             case 0: op = rv_op_fmsub_s; break;
             case 1: op = rv_op_fmsub_d; break;
             case 3: op = rv_op_fmsub_q; break;
             }
             break;
         case 18:
-            switch (((inst >> 25) & 0b11)) {
+            switch (((inst >> 25) & 3/*0b11*/)) {
             case 0: op = rv_op_fnmsub_s; break;
             case 1: op = rv_op_fnmsub_d; break;
             case 3: op = rv_op_fnmsub_q; break;
             }
             break;
         case 19:
-            switch (((inst >> 25) & 0b11)) {
+            switch (((inst >> 25) & 3/*0b11*/)) {
             case 0: op = rv_op_fnmadd_s; break;
             case 1: op = rv_op_fnmadd_d; break;
             case 3: op = rv_op_fnmadd_q; break;
             }
             break;
         case 20:
-            switch (((inst >> 25) & 0b1111111)) {
+            switch (((inst >> 25) & 127/*0b1111111*/)) {
             case 0: op = rv_op_fadd_s; break;
             case 1: op = rv_op_fadd_d; break;
             case 3: op = rv_op_fadd_q; break;
@@ -1206,100 +1206,100 @@ static void decode_inst_opcode(rv_decode *dec, rv_isa isa)
             case 13: op = rv_op_fdiv_d; break;
             case 15: op = rv_op_fdiv_q; break;
             case 16:
-                switch (((inst >> 12) & 0b111)) {
+                switch (((inst >> 12) & 3/*0b111*/)) {
                 case 0: op = rv_op_fsgnj_s; break;
                 case 1: op = rv_op_fsgnjn_s; break;
                 case 2: op = rv_op_fsgnjx_s; break;
                 }
                 break;
             case 17:
-                switch (((inst >> 12) & 0b111)) {
+                switch (((inst >> 12) & 7/*0b111*/)) {
                 case 0: op = rv_op_fsgnj_d; break;
                 case 1: op = rv_op_fsgnjn_d; break;
                 case 2: op = rv_op_fsgnjx_d; break;
                 }
                 break;
             case 19:
-                switch (((inst >> 12) & 0b111)) {
+                switch (((inst >> 12) & 7/*0b111*/)) {
                 case 0: op = rv_op_fsgnj_q; break;
                 case 1: op = rv_op_fsgnjn_q; break;
                 case 2: op = rv_op_fsgnjx_q; break;
                 }
                 break;
             case 20:
-                switch (((inst >> 12) & 0b111)) {
+                switch (((inst >> 12) & 7/*0b111*/)) {
                 case 0: op = rv_op_fmin_s; break;
                 case 1: op = rv_op_fmax_s; break;
                 }
                 break;
             case 21:
-                switch (((inst >> 12) & 0b111)) {
+                switch (((inst >> 12) & 7/*0b111*/)) {
                 case 0: op = rv_op_fmin_d; break;
                 case 1: op = rv_op_fmax_d; break;
                 }
                 break;
             case 23:
-                switch (((inst >> 12) & 0b111)) {
+                switch (((inst >> 12) & 7/*0b111*/)) {
                 case 0: op = rv_op_fmin_q; break;
                 case 1: op = rv_op_fmax_q; break;
                 }
                 break;
             case 32:
-                switch (((inst >> 20) & 0b11111)) {
+                switch (((inst >> 20) & 31/*0b11111*/)) {
                 case 1: op = rv_op_fcvt_s_d; break;
                 case 3: op = rv_op_fcvt_s_q; break;
                 }
                 break;
             case 33:
-                switch (((inst >> 20) & 0b11111)) {
+                switch (((inst >> 20) & 31/*0b11111*/)) {
                 case 0: op = rv_op_fcvt_d_s; break;
                 case 3: op = rv_op_fcvt_d_q; break;
                 }
                 break;
             case 35:
-                switch (((inst >> 20) & 0b11111)) {
+                switch (((inst >> 20) & 31/*0b11111*/)) {
                 case 0: op = rv_op_fcvt_q_s; break;
                 case 1: op = rv_op_fcvt_q_d; break;
                 }
                 break;
             case 44:
-                switch (((inst >> 20) & 0b11111)) {
+                switch (((inst >> 20) & 31/*0b11111*/)) {
                 case 0: op = rv_op_fsqrt_s; break;
                 }
                 break;
             case 45:
-                switch (((inst >> 20) & 0b11111)) {
+                switch (((inst >> 20) & 31/*0b11111*/)) {
                 case 0: op = rv_op_fsqrt_d; break;
                 }
                 break;
             case 47:
-                switch (((inst >> 20) & 0b11111)) {
+                switch (((inst >> 20) & 31/*0b11111*/)) {
                 case 0: op = rv_op_fsqrt_q; break;
                 }
                 break;
             case 80:
-                switch (((inst >> 12) & 0b111)) {
+                switch (((inst >> 12) & 7/*0b111*/)) {
                 case 0: op = rv_op_fle_s; break;
                 case 1: op = rv_op_flt_s; break;
                 case 2: op = rv_op_feq_s; break;
                 }
                 break;
             case 81:
-                switch (((inst >> 12) & 0b111)) {
+                switch (((inst >> 12) & 7/*0b111*/)) {
                 case 0: op = rv_op_fle_d; break;
                 case 1: op = rv_op_flt_d; break;
                 case 2: op = rv_op_feq_d; break;
                 }
                 break;
             case 83:
-                switch (((inst >> 12) & 0b111)) {
+                switch (((inst >> 12) & 7/*0b111*/)) {
                 case 0: op = rv_op_fle_q; break;
                 case 1: op = rv_op_flt_q; break;
                 case 2: op = rv_op_feq_q; break;
                 }
                 break;
             case 96:
-                switch (((inst >> 20) & 0b11111)) {
+                switch (((inst >> 20) & 31/*0b11111*/)) {
                 case 0: op = rv_op_fcvt_w_s; break;
                 case 1: op = rv_op_fcvt_wu_s; break;
                 case 2: op = rv_op_fcvt_l_s; break;
@@ -1307,7 +1307,7 @@ static void decode_inst_opcode(rv_decode *dec, rv_isa isa)
                 }
                 break;
             case 97:
-                switch (((inst >> 20) & 0b11111)) {
+                switch (((inst >> 20) & 31/*0b11111*/)) {
                 case 0: op = rv_op_fcvt_w_d; break;
                 case 1: op = rv_op_fcvt_wu_d; break;
                 case 2: op = rv_op_fcvt_l_d; break;
@@ -1315,7 +1315,7 @@ static void decode_inst_opcode(rv_decode *dec, rv_isa isa)
                 }
                 break;
             case 99:
-                switch (((inst >> 20) & 0b11111)) {
+                switch (((inst >> 20) & 31/*0b11111*/)) {
                 case 0: op = rv_op_fcvt_w_q; break;
                 case 1: op = rv_op_fcvt_wu_q; break;
                 case 2: op = rv_op_fcvt_l_q; break;
@@ -1323,7 +1323,7 @@ static void decode_inst_opcode(rv_decode *dec, rv_isa isa)
                 }
                 break;
             case 104:
-                switch (((inst >> 20) & 0b11111)) {
+                switch (((inst >> 20) & 31/*0b11111*/)) {
                 case 0: op = rv_op_fcvt_s_w; break;
                 case 1: op = rv_op_fcvt_s_wu; break;
                 case 2: op = rv_op_fcvt_s_l; break;
@@ -1331,7 +1331,7 @@ static void decode_inst_opcode(rv_decode *dec, rv_isa isa)
                 }
                 break;
             case 105:
-                switch (((inst >> 20) & 0b11111)) {
+                switch (((inst >> 20) & 31/*0b11111*/)) {
                 case 0: op = rv_op_fcvt_d_w; break;
                 case 1: op = rv_op_fcvt_d_wu; break;
                 case 2: op = rv_op_fcvt_d_l; break;
@@ -1339,7 +1339,7 @@ static void decode_inst_opcode(rv_decode *dec, rv_isa isa)
                 }
                 break;
             case 107:
-                switch (((inst >> 20) & 0b11111)) {
+                switch (((inst >> 20) & 31/*0b11111*/)) {
                 case 0: op = rv_op_fcvt_q_w; break;
                 case 1: op = rv_op_fcvt_q_wu; break;
                 case 2: op = rv_op_fcvt_q_l; break;
@@ -1347,50 +1347,50 @@ static void decode_inst_opcode(rv_decode *dec, rv_isa isa)
                 }
                 break;
             case 112:
-                switch (((inst >> 17) & 0b11111000) | ((inst >> 12) & 0b00000111)) {
+                switch (((inst >> 17) & 248/*0b11111000*/) | ((inst >> 12) & 7/*0b00000111*/)) {
                 case 0: op = rv_op_fmv_x_s; break;
                 case 1: op = rv_op_fclass_s; break;
                 }
                 break;
             case 113:
-                switch (((inst >> 17) & 0b11111000) | ((inst >> 12) & 0b00000111)) {
+                switch (((inst >> 17) & 248/*0b11111000*/) | ((inst >> 12) & 7/*0b00000111*/)) {
                 case 0: op = rv_op_fmv_x_d; break;
                 case 1: op = rv_op_fclass_d; break;
                 }
                 break;
             case 115:
-                switch (((inst >> 17) & 0b11111000) | ((inst >> 12) & 0b00000111)) {
+                switch (((inst >> 17) & 248/*0b11111000*/) | ((inst >> 12) & 7/*0b00000111*/)) {
                 case 0: op = rv_op_fmv_x_q; break;
                 case 1: op = rv_op_fclass_q; break;
                 }
                 break;
             case 120:
-                switch (((inst >> 17) & 0b11111000) | ((inst >> 12) & 0b00000111)) {
+                switch (((inst >> 17) & 248/*0b11111000*/) | ((inst >> 12) & 7/*0b00000111*/)) {
                 case 0: op = rv_op_fmv_s_x; break;
                 }
                 break;
             case 121:
-                switch (((inst >> 17) & 0b11111000) | ((inst >> 12) & 0b00000111)) {
+                switch (((inst >> 17) & 248/*0b11111000*/) | ((inst >> 12) & 7/*0b00000111*/)) {
                 case 0: op = rv_op_fmv_d_x; break;
                 }
                 break;
             case 123:
-                switch (((inst >> 17) & 0b11111000) | ((inst >> 12) & 0b00000111)) {
+                switch (((inst >> 17) & 248/*0b11111000*/) | ((inst >> 12) & 7/*0b00000111*/)) {
                 case 0: op = rv_op_fmv_q_x; break;
                 }
                 break;
             }
             break;
         case 22:
-            switch (((inst >> 12) & 0b111)) {
+            switch (((inst >> 12) & 7/*0b111*/)) {
             case 0: op = rv_op_addid; break;
             case 1:
-                switch (((inst >> 26) & 0b111111)) {
+                switch (((inst >> 26) & 63/*0b111111*/)) {
                 case 0: op = rv_op_sllid; break;
                 }
                 break;
             case 5:
-                switch (((inst >> 26) & 0b111111)) {
+                switch (((inst >> 26) & 63/*0b111111*/)) {
                 case 0: op = rv_op_srlid; break;
                 case 16: op = rv_op_sraid; break;
                 }
@@ -1398,7 +1398,7 @@ static void decode_inst_opcode(rv_decode *dec, rv_isa isa)
             }
             break;
         case 24:
-            switch (((inst >> 12) & 0b111)) {
+            switch (((inst >> 12) & 7/*0b111*/)) {
             case 0: op = rv_op_beq; break;
             case 1: op = rv_op_bne; break;
             case 4: op = rv_op_blt; break;
@@ -1408,32 +1408,32 @@ static void decode_inst_opcode(rv_decode *dec, rv_isa isa)
             }
             break;
         case 25:
-            switch (((inst >> 12) & 0b111)) {
+            switch (((inst >> 12) & 7/*0b111*/)) {
             case 0: op = rv_op_jalr; break;
             }
             break;
         case 27: op = rv_op_jal; break;
         case 28:
-            switch (((inst >> 12) & 0b111)) {
+            switch (((inst >> 12) & 7/*0b111*/)) {
             case 0:
-                switch (((inst >> 20) & 0b111111100000) | ((inst >> 7) & 0b000000011111)) {
+                switch (((inst >> 20) & 4064/*0b111111100000*/) | ((inst >> 7) & 31/*0b000000011111*/)) {
                 case 0:
-                    switch (((inst >> 15) & 0b1111111111)) {
+                    switch (((inst >> 15) & 1023/*0b1111111111*/)) {
                     case 0: op = rv_op_ecall; break;
                     case 32: op = rv_op_ebreak; break;
                     case 64: op = rv_op_uret; break;
                     }
                     break;
                 case 256:
-                    switch (((inst >> 20) & 0b11111)) {
+                    switch (((inst >> 20) & 31/*0b11111*/)) {
                     case 2:
-                        switch (((inst >> 15) & 0b11111)) {
+                        switch (((inst >> 15) & 31/*0b11111*/)) {
                         case 0: op = rv_op_sret; break;
                         }
                         break;
                     case 4: op = rv_op_sfence_vm; break;
                     case 5:
-                        switch (((inst >> 15) & 0b11111)) {
+                        switch (((inst >> 15) & 31/*0b11111*/)) {
                         case 0: op = rv_op_wfi; break;
                         }
                         break;
@@ -1441,17 +1441,17 @@ static void decode_inst_opcode(rv_decode *dec, rv_isa isa)
                     break;
                 case 288: op = rv_op_sfence_vma; break;
                 case 512:
-                    switch (((inst >> 15) & 0b1111111111)) {
+                    switch (((inst >> 15) & 1023/*0b1111111111*/)) {
                     case 64: op = rv_op_hret; break;
                     }
                     break;
                 case 768:
-                    switch (((inst >> 15) & 0b1111111111)) {
+                    switch (((inst >> 15) & 1023/*0b1111111111*/)) {
                     case 64: op = rv_op_mret; break;
                     }
                     break;
                 case 1952:
-                    switch (((inst >> 15) & 0b1111111111)) {
+                    switch (((inst >> 15) & 1023/*0b1111111111*/)) {
                     case 576: op = rv_op_dret; break;
                     }
                     break;
@@ -1466,7 +1466,7 @@ static void decode_inst_opcode(rv_decode *dec, rv_isa isa)
             }
             break;
         case 30:
-            switch (((inst >> 22) & 0b1111111000) | ((inst >> 12) & 0b0000000111)) {
+            switch (((inst >> 22) & 1016/*0b1111111000*/) | ((inst >> 12) & 7/*0b0000000111*/)) {
             case 0: op = rv_op_addd; break;
             case 1: op = rv_op_slld; break;
             case 5: op = rv_op_srld; break;
@@ -2102,10 +2102,10 @@ size_t inst_length(rv_inst inst)
      * 0111111 - 64 bit
      */
 
-    return (inst &      0b11) != 0b11      ? 2
-         : (inst &   0b11100) != 0b11100   ? 4
-         : (inst &  0b111111) == 0b011111  ? 6
-         : (inst & 0b1111111) == 0b0111111 ? 8
+    return (inst &      3/*0b11*/) != 3/*0b11*/      ? 2
+         : (inst &   28/*0b11100*/) != 28/*0b11100*/   ? 4
+         : (inst &  63/*0b111111*/) == 31/*0b011111*/  ? 6
+         : (inst & 127/*0b1111111*/) == 63/*0b0111111*/ ? 8
          : 0;
 }
 
