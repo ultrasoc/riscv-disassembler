@@ -2360,3 +2360,23 @@ void disasm_inst(char *buf, size_t buflen, rv_isa isa, uint64_t pc, rv_inst inst
     decode_inst_lift_pseudo(&dec);
     format_inst(buf, buflen, 32, &dec);
 }
+
+rv_op disasm_inst_adv(rv_decode *dec, char *buf, size_t buflen, rv_isa isa, uint64_t pc, rv_inst inst)
+{
+    rv_decode empty = { 0 };
+    *dec = empty;
+
+    dec->pc = pc;
+    dec->inst = inst;
+    decode_inst_opcode(dec, isa);
+    decode_inst_operands(dec);
+    switch (isa) {
+    case rv32: decompress_inst_rv32(dec); break;
+    case rv64: decompress_inst_rv64(dec); break;
+    case rv128: decompress_inst_rv128(dec); break;
+    }
+    decode_inst_lift_pseudo(dec);
+    format_inst(buf, buflen, 32, dec);
+
+    return (rv_op)dec->op;
+}

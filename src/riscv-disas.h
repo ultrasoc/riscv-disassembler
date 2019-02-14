@@ -518,6 +518,7 @@ typedef struct {
 
 size_t inst_length(rv_inst inst);
 void disasm_inst(char *buf, size_t buflen, rv_isa isa, uint64_t pc, rv_inst inst);
+rv_op disasm_inst_adv(rv_decode *dec, char *buf, size_t buflen, rv_isa isa, uint64_t pc, rv_inst inst);
 
 #ifdef __cplusplus
 }
