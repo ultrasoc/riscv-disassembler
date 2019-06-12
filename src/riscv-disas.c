@@ -2361,7 +2361,8 @@ void disasm_inst(char *buf, size_t buflen, rv_isa isa, uint64_t pc, rv_inst inst
     format_inst(buf, buflen, 32, &dec);
 }
 
-rv_op disasm_inst_adv(rv_decode *dec, char *buf, size_t buflen, rv_isa isa, uint64_t pc, rv_inst inst)
+rv_op disasm_inst_adv(rv_decode *dec, char *buf, size_t buflen, rv_isa isa,
+    uint64_t pc, rv_inst inst, int lift)
 {
     rv_decode empty = { 0 };
     *dec = empty;
@@ -2375,8 +2376,16 @@ rv_op disasm_inst_adv(rv_decode *dec, char *buf, size_t buflen, rv_isa isa, uint
     case rv64: decompress_inst_rv64(dec); break;
     case rv128: decompress_inst_rv128(dec); break;
     }
-    decode_inst_lift_pseudo(dec);
-    format_inst(buf, buflen, 32, dec);
+
+    /* optionally lift the pseudo-instructions here */
+    if (lift) {
+        decode_inst_lift_pseudo(dec);
+    }
+
+    /* only write disassemble line if we have a buffer! */
+    if (buf) {
+        format_inst(buf, buflen, 32, dec);
+    }
 
     return (rv_op)dec->op;
 }
