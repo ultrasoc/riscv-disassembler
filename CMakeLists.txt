@@ -26,7 +26,7 @@ if (BUILD_TESTS)
 
     # test-encode execautable
     project(test-encode)
-    add_executable(test-encode src/test-disas.c)
+    add_executable(test-encode src/test-encode.c)
     target_link_libraries(test-encode riscv-disassembler)
 endif(BUILD_TESTS)
 
