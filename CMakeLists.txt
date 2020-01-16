@@ -15,6 +15,10 @@ target_compile_options(riscv-disassembler PRIVATE -fdiagnostics-show-option)
 target_include_directories( riscv-disassembler PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src)
 
 if (BUILD_TESTS)
+    # Disregard coverage option on unit tests
+    string(REPLACE "--coverage" "" CMAKE_C_FLAGS "${CMAKE_C_FLAGS}")
+    string(REPLACE "--coverage" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+
     # test-disas execautable
     project(test-disas)
     add_executable(test-disas src/test-disas.c)
